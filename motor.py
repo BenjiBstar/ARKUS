@@ -5,6 +5,7 @@ import sqlite3
 import uvicorn
 import os
 from urllib.parse import unquote
+from fastapi.responses import HTMLResponse, FileResponse, JSONResponse
 
 app = FastAPI()
 
@@ -305,6 +306,22 @@ def inteligencia_dinamica(tabla: str, identificador: str):
         return dict(resultado)
         
     return JSONResponse(status_code=404, content={"error": "Expediente clasificado o no encontrado en la Bóveda."})
+# ==========================================
+# RUTA PARA SERVIR LA INTERFAZ CON EL TOKEN SEGURO
+# ==========================================
+@app.get("/")
+def home():
+    # Lee el token seguro que guardaste en el panel de Render
+    mapbox_token = os.environ.get("MAPBOX_TOKEN", "")
+    
+    # Lee tu archivo interfaz.html
+    with open("interfaz.html", "r", encoding="utf-8") as f:
+        html_content = f.read()
+    
+    # Reemplaza el texto comodín por tu token real de Mapbox
+    html_content = html_content.replace("TU_TOKEN_AQUI", mapbox_token)
+    
+    return HTMLResponse(content=html_content)
 
 # =====================================================================
 # ARRANQUE PREPARADO PARA SERVIDORES EN LA NUBE (RENDER)
