@@ -1,0 +1,22 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    { "type": "Feature", "properties": { "nombre": "Salar del Hombre Muerto", "recurso": "Litio", "empresa": "Arcadium Lithium", "estado": "Operación" }, "geometry": { "type": "Point", "coordinates": [-67.1000, -25.4000] } },
+    { "type": "Feature", "properties": { "nombre": "Cauchari-Olaroz", "recurso": "Litio", "empresa": "Minera Exar", "estado": "Operación" }, "geometry": { "type": "Point", "coordinates": [-66.8000, -23.8000] } },
+    { "type": "Feature", "properties": { "nombre": "Tres Quebradas (3Q)", "recurso": "Litio", "empresa": "Zijin Mining", "estado": "Construcción" }, "geometry": { "type": "Point", "coordinates": [-67.8000, -27.2000] } },
+    
+    { "type": "Feature", "properties": { "nombre": "Proyecto MARA", "recurso": "Cobre", "empresa": "Glencore", "estado": "Factibilidad" }, "geometry": { "type": "Point", "coordinates": [-66.3100, -27.3200] } },
+    { "type": "Feature", "properties": { "nombre": "Josemaría", "recurso": "Cobre", "empresa": "Lundin Mining", "estado": "Construcción" }, "geometry": { "type": "Point", "coordinates": [-69.5700, -28.2300] } },
+    { "type": "Feature", "properties": { "nombre": "Taca Taca", "recurso": "Cobre", "empresa": "First Quantum", "estado": "Evaluación" }, "geometry": { "type": "Point", "coordinates": [-67.7500, -24.5800] } },
+
+    { "type": "Feature", "properties": { "nombre": "Núcleo Vaca Muerta (Añelo)", "recurso": "Petroleo y Gas", "empresa": "YPF / Chevron", "estado": "Extracción Masiva" }, "geometry": { "type": "Point", "coordinates": [-68.7800, -38.3500] } },
+    { "type": "Feature", "properties": { "nombre": "Cuenca Golfo San Jorge", "recurso": "Petroleo y Gas", "empresa": "PAE / YPF", "estado": "Operación" }, "geometry": { "type": "Point", "coordinates": [-67.4800, -45.8600] } },
+    { "type": "Feature", "properties": { "nombre": "Cuenca Austral (Offshore)", "recurso": "Petroleo y Gas", "empresa": "TotalEnergies", "estado": "Operación" }, "geometry": { "type": "Point", "coordinates": [-66.5000, -52.2000] } },
+
+    { "type": "Feature", "properties": { "nombre": "Mina Cerro Solo", "recurso": "Uranio", "empresa": "CNEA", "estado": "Reserva Estratégica" }, "geometry": { "type": "Point", "coordinates": [-68.9600, -43.8300] } },
+    { "type": "Feature", "properties": { "nombre": "Complejo Sierra Pintada", "recurso": "Uranio", "empresa": "CNEA", "estado": "Mantenimiento / Remediación" }, "geometry": { "type": "Point", "coordinates": [-68.3900, -34.7000] } },
+
+    { "type": "Feature", "properties": { "nombre": "Rodeo de los Molles", "recurso": "Tierras Raras", "empresa": "Exploración Estatal/Privada", "estado": "Exploración Geológica" }, "geometry": { "type": "Point", "coordinates": [-65.7500, -32.6100] } },
+    { "type": "Feature", "properties": { "nombre": "Valle de Lerma / Cachi", "recurso": "Tierras Raras", "empresa": "Fase Temprana", "estado": "Anomalía Confirmada" }, "geometry": { "type": "Point", "coordinates": [-66.1600, -25.1200] } }
+  ]
+}

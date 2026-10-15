@@ -1,0 +1,1181 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.163818,
+          -38.716013
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Bahía Blanca, Comandante Espora",
+        "provincia": "Buenos Aires",
+        "direccion": "Ex Ruta 3 Norte Km. 675, CP: B8000",
+        "concesionado": "Si",
+        "explotador": "Aeropuerto de Bahía Blanca S.A.",
+        "pistas": "17L/35R (2410 m x 45 m) Asfalto | 06/24 (1980 m x 30 m) Asfalto | 17R/35L (1498 m x 30 m) Asfalto",
+        "codigo de identificacion": "BHI",
+        "latitud": "-38.716013",
+        "longitud": "-62.163818"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.53441,
+          -34.814828
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Ezeiza, Ministro Pistarini",
+        "provincia": "Buenos Aires",
+        "direccion": "Autopista Tte. Gral. Ricchieri Km 33,5 - CP: B1802EZE",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "11/29 (3300 m x 60 m) Asfalto | 17/35 (3105 m x 45 m) Asfalto",
+        "codigo de identificacion": "EZE",
+        "latitud": "-34.814828",
+        "longitud": "-58.53441"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.814835,
+          -38.487915
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Necochea, Edgardo Hugo Yelpo",
+        "provincia": "Buenos Aires",
+        "direccion": "Ruta 86 Km. 12,5 CP: B7630",
+        "concesionado": "No",
+        "explotador": "Municipalidad de Necochea",
+        "pistas": "18/36 (1500 m x 30 m) Asfalto | 17/35 (1100 m x 30 m) Tierra |13/31 (799 m x 18 m) Tierra",
+        "codigo de identificacion": "NEC",
+        "latitud": "-38.487915",
+        "longitud": "-58.814835"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.780036,
+          -32.916644
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Rosario, Islas Malvinas",
+        "provincia": "Santa Fe",
+        "direccion": "Av. Jorge Newbery S/N - CP: S2000",
+        "concesionado": "No",
+        "explotador": "Ente Tripartito Air",
+        "pistas": "02/20 (3000 m x 45 m) Hormigón",
+        "codigo de identificacion": "ROS",
+        "latitud": "-32.916644",
+        "longitud": "-60.780036"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.30123,
+          -27.757496
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Santiago del estero, Com. Angel De La Paz Aragones",
+        "provincia": "Santiago del Estero",
+        "direccion": "Av. Madre de Ciudades S/N - CP: 4200",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "03/21 (2434 m x 45 m) Asfalto",
+        "codigo de identificacion": "SDE",
+        "latitud": "-27.757496",
+        "longitud": "-64.30123"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.933222,
+          -27.506181
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Termas de Rio Hondo",
+        "provincia": "Santiago del Estero",
+        "direccion": "Av Costanera prolongación S/N - Rincon de Atacama - CP: 4220",
+        "concesionado": "No",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "01/19 (2500 m x 30 m) Asfalto",
+        "codigo de identificacion": "RHD",
+        "latitud": "-27.506181",
+        "longitud": "-64.933222"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.232396,
+          -51.607574
+        ]
+      },
+      "properties": {
+        "aeropuerto": "El turbio, 28 de Noviembre",
+        "provincia": "Santa Cruz",
+        "direccion": "Ruta Nacional 40 S/N - CP: Z9407",
+        "concesionado": "No",
+        "explotador": "Municipalidad 28 de Noviembre",
+        "pistas": "06/24 (1750 m x 30 m)",
+        "codigo de identificacion": "RYO",
+        "latitud": "-51.607574",
+        "longitud": "-72.232396"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414576,
+          -34.555602
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Aeroparque, Jorge Newbery",
+        "provincia": "Ciudad Autónoma de Buenos Aires",
+        "direccion": "Av. Rafael Obligado S/N - CP: C1425DAA",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "13/31 (2100 m x 40 m) Hormigón",
+        "codigo de identificacion": "AEP",
+        "latitud": "-34.555602",
+        "longitud": "-58.414576"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.755101,
+          -28.592373
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Catamarca, Coronel Felipe Varela",
+        "provincia": "Catamarca",
+        "direccion": "Ruta Provincial 33 Km 22, Valle Viejo - CP: 4707",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "02/20 (2800 m x 30 m) Asfalto",
+        "codigo de identificacion": "CTC",
+        "latitud": "-28.592373",
+        "longitud": "-65.755101"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.468404,
+          -45.789996
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Comodoro Rivadavia, General E. Mosconi",
+        "provincia": "Chubut",
+        "direccion": "Camino Vecinal Dr. Mariano González Km 9 - CP: 9000",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "07/25 (2810 m x 50 m) Hormigón",
+        "codigo de identificacion": "CRD",
+        "latitud": "-45.789996",
+        "longitud": "-67.468404"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.002124,
+          -31.30264
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Concordia, Comodoro Juan José Pierrestegui",
+        "provincia": "Entre Ríos",
+        "direccion": "Av. Monseñor Rosch y Calle Ingreso Suboficial Principal Pesce - CP: E3200",
+        "concesionado": "No",
+        "explotador": "Municipalidad de Concordia",
+        "pistas": "04/22 (1600 m x 30 m) Asfalto",
+        "codigo de identificacion": "COC",
+        "latitud": "-31.30264",
+        "longitud": "-58.002124"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.212354,
+          -31.315373
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Córdoba, Ing. A. Taravella - Pajas Blancas",
+        "provincia": "Córdoba",
+        "direccion": "Av. La Voz del Interior 8500 - CP: X5008HMH",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "18/36 (3200 m x 45 m) Hormigón | 05/23 (2200 m x 45 m) Asfalto",
+        "codigo de identificacion": "COR",
+        "latitud": "-31.315373",
+        "longitud": "-64.212354"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.75833,
+          -27.448208
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Corrientes, Doctor Fernando Piragine Niveyro",
+        "provincia": "Corrientes",
+        "direccion": "Ruta Nacional 12 Km. 1020, CP: W3400",
+        "concesionado": "No",
+        "explotador": "Dirección Provincial de Aeronaútica de Corrientes",
+        "pistas": "02/20 (2100 m x 45 m) Hormigón",
+        "codigo de identificacion": "CNQ",
+        "latitud": "-27.448208",
+        "longitud": "-58.75833"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.05405,
+          -50.283847
+        ]
+      },
+      "properties": {
+        "aeropuerto": "El Calafate, Comandante Armando Tola",
+        "provincia": "Santa Cruz",
+        "direccion": "El Calafate - CP: Z9405ZAA",
+        "concesionado": "Si",
+        "explotador": "London Supply S.A.C.I.F.I.",
+        "pistas": "07/25 (2550 m x 45 ) Hormigón",
+        "codigo de identificacion": "FTE",
+        "latitud": "-50.283847",
+        "longitud": "-72.05405"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.145698,
+          -42.90588
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Esquel, Brigadier General Antonio Parodi",
+        "provincia": "Chubut",
+        "direccion": "Ruta Nacional 40 Km. 21 - CP: 9200",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "05/23 (2400 m x 40 m) Asfalto | 08/26 (1200 m x 30 m) Tierra",
+        "codigo de identificacion": "EQS",
+        "latitud": "-42.90588",
+        "longitud": "-71.145698"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.230703,
+          -26.2142
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Formosa, El Pucu",
+        "provincia": "Formosa",
+        "direccion": "Ruta Nacional 11, Km 1167 - CP: 3600",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "04/22 (1800 m x 30 m) Asfalto",
+        "codigo de identificacion": "FMA",
+        "latitud": "-26.2142",
+        "longitud": "-58.230703"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.758045,
+          -35.68734
+        ]
+      },
+      "properties": {
+        "aeropuerto": "General Pico",
+        "provincia": "La Pampa",
+        "direccion": "Acceso Héctor Gandini 985 - CP: 6360",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "16/34 (2350 m x 45 m) Asfalto",
+        "codigo de identificacion": "GPO",
+        "latitud": "-35.68734",
+        "longitud": "-63.758045"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.61033,
+          -39.003205
+        ]
+      },
+      "properties": {
+        "aeropuerto": "General Roca, Arturo Humberto Illia",
+        "provincia": "Río Negro",
+        "direccion": "Ruta Provincial 6 - CP: R8332",
+        "concesionado": "No",
+        "explotador": "Aeroclub Gral. Roca",
+        "pistas": "09/27 (2156 m x 45 m) Asfalto",
+        "codigo de identificacion": "GNR",
+        "latitud": "-39.003205",
+        "longitud": "-67.61033"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.476309,
+          -25.73171
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Cataratas del Iguazú, My. Carlos E. Krause",
+        "provincia": "Misiones",
+        "direccion": "Ruta Provincial 101 - CP: 3370",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "13/31 (3300 m x 45 m) Asfalto",
+        "codigo de identificacion": "IGR",
+        "latitud": "-25.73171",
+        "longitud": "-54.476309"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.093381,
+          -24.385823
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Jujuy, Gobernador Horacio Guzman",
+        "provincia": "Jujuy",
+        "direccion": "Ruta provincial 56 S/N - CP: 4610",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "16/34 (2944 m x 40 m) Asfalto",
+        "codigo de identificacion": "JUJ",
+        "latitud": "-24.385823",
+        "longitud": "-65.093381"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.929303,
+          -34.545569
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Junin",
+        "provincia": "Buenos Aires",
+        "direccion": "Ruta Nacional 188 - CP: B6000",
+        "concesionado": "No",
+        "explotador": "Municipalidad de Junín",
+        "pistas": "18/36 (1500 m x 30 m) Asfalto",
+        "codigo de identificacion": "JNI",
+        "latitud": "-34.545569",
+        "longitud": "-60.929303"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.895479,
+          -34.965445
+        ]
+      },
+      "properties": {
+        "aeropuerto": "La Plata",
+        "provincia": "Buenos Aires",
+        "direccion": "Av. 13 y Calle 610 - CP: B1900",
+        "concesionado": "No",
+        "explotador": "Provincia de Buenos Aires",
+        "pistas": "02/20 (1427 m x 45 m) Asfalto",
+        "codigo de identificacion": "LPG",
+        "latitud": "-34.965445",
+        "longitud": "-57.895479"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.794172,
+          -29.383788
+        ]
+      },
+      "properties": {
+        "aeropuerto": "La Rioja, Cap. Vicente A. Almonacid",
+        "provincia": "La Rioja",
+        "direccion": "Acceso Ruta Provincial 5 S/N - CP: 5300",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "03/21 (2860 m x 30 m) Asfalto",
+        "codigo de identificacion": "IRJ",
+        "latitud": "-29.383788",
+        "longitud": "-66.794172"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.584661,
+          -35.483383
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Malargüe, Comodoro Ricardo Salomón",
+        "provincia": "Mendoza",
+        "direccion": "Ruta Nacional 40 Sur - CP: 5613",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "14/32 (2650 m x 30 m) Asfalto | 09/27 (1450 x 20 m) Asfalto",
+        "codigo de identificacion": "LGS",
+        "latitud": "-35.483383",
+        "longitud": "-69.584661"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.581487,
+          -37.933171
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Mar del Plata, Astor Piazzolla",
+        "provincia": "Buenos Aires",
+        "direccion": "Autovía 2 Km. 398,5 - CP: B7612",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "13/31 (2200 m x 45 m) Asfalto",
+        "codigo de identificacion": "MDQ",
+        "latitud": "-37.933171",
+        "longitud": "-57.581487"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.798497,
+          -32.827675
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Mendoza, El Plumerillo / Gob. Francisco Gabrielli",
+        "provincia": "Mendoza",
+        "direccion": "Ruta Nacional 40, Acceso Norte Km 15 - CP: 5539",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "18/36 (2835 m x 54 m) Hormigón",
+        "codigo de identificacion": "MDZ",
+        "latitud": "-32.827675",
+        "longitud": "-68.798497"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.139827,
+          -38.951862
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Neuquen, Presidente Peron",
+        "provincia": "Neuquén",
+        "direccion": "San Martín 5901 - CP: Q8304ACG",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos del Neuquen S.A.",
+        "pistas": "09/27 (2570 m x 45 m) Asfalto",
+        "codigo de identificacion": "NQN",
+        "latitud": "-38.951862",
+        "longitud": "-68.139827"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.483975,
+          -31.789473
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Parana, General Urquiza",
+        "provincia": "Entre Ríos",
+        "direccion": "Calle Salvador Caputto S/N - CP: 3100",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "02/20 (2100 m x 45 m) Asfalto",
+        "codigo de identificacion": "PRA",
+        "latitud": "-31.789473",
+        "longitud": "-60.483975"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.152842,
+          -29.68825
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Paso de los libres",
+        "provincia": "Corrientes",
+        "direccion": "Coronel José Reguera 1256 - CP: W3230AYV",
+        "concesionado": "No",
+        "explotador": "ANAC",
+        "pistas": "18/36 (2260 m x 45 m) Asfalto",
+        "codigo de identificacion": "AOL",
+        "latitud": "-29.68825",
+        "longitud": "-57.152842"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.969585,
+          -27.391659
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Posadas, Libertador Gral. D. Jose de San Martin",
+        "provincia": "Misiones",
+        "direccion": "Ruta Nacional 12 km 1366,5 - CP: N3300",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "01/19 (2252 m x 30 m) Asfalto",
+        "codigo de identificacion": "PSS",
+        "latitud": "-27.391659",
+        "longitud": "-55.969585"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.100429,
+          -42.759112
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Puerto Madryn, El Tehuelche",
+        "provincia": "Chubut",
+        "direccion": "Ruta Nacional A010 acceso Norte 0 - CP: 9120",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "05/23 (2500 m x 45 m) Asfalto",
+        "codigo de identificacion": "PMY",
+        "latitud": "-42.759112",
+        "longitud": "-65.100429"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.692878,
+          -29.201538
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Reconquista, Tte. Daniel Jukic",
+        "provincia": "Santa Fe",
+        "direccion": "Ruta Nacional 11, Km 781 - CP: 3560",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "10/28 (2800 m x 50 m) Hormigón | 02/20 (1250 m x 34 m) Hormigón",
+        "codigo de identificacion": "RCQ",
+        "latitud": "-29.201538",
+        "longitud": "-59.692878"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.048756,
+          -27.444939
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Resistencia, Jose de San Martin",
+        "provincia": "Chaco",
+        "direccion": "Ruta Nacional 11, Km 1003,5 - CP: 3500",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "03/21 (2770 m x 45 m) Asfalto",
+        "codigo de identificacion": "RES",
+        "latitud": "-27.444939",
+        "longitud": "-59.048756"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.277823,
+          -33.096035
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Rio Cuarto, Area de Material de Río Cuarto",
+        "provincia": "Córdoba",
+        "direccion": "Las Higueras - CP: 5805",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "05/23 (2265 m x 45 m) Asfalto | 18/36 (2075 m x 40 m) Asfalto",
+        "codigo de identificacion": "RCU",
+        "latitud": "-33.096035",
+        "longitud": "-64.277823"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.306376,
+          -51.610389
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Rio Gallegos, Piloto Civil Norberto Fernandez",
+        "provincia": "Santa Cruz",
+        "direccion": "Ruta Nacional 3, Km 8 - CP: 9400",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "07/25 (3549 m x 45 m) Hormigón",
+        "codigo de identificacion": "RGL",
+        "latitud": "-51.610389",
+        "longitud": "-69.306376"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.753445,
+          -53.781436
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Rio Grande, Gob. Ramón Trejo Noel",
+        "provincia": "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
+        "direccion": "Ruta Nacional 3, Acceso Aeropuerto - CP: 9420",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "07/25 (2000 m x 40 m) Asfalto",
+        "codigo de identificacion": "RGA",
+        "latitud": "-53.781436",
+        "longitud": "-67.753445"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.478388,
+          -24.844143
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Salta, General D. Martin Miguel de Güemes",
+        "provincia": "Salta",
+        "direccion": "Ruta Nacional 51, Km 5 - CP: 4400",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "02/20 (3000 m x 45 m) Asfalto | 06/24 (2400 m x 30 m) Asfalto",
+        "codigo de identificacion": "SLA",
+        "latitud": "-24.844143",
+        "longitud": "-65.478388"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.161972,
+          -41.146634
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Bariloche, Teniente Luis Candelaria",
+        "provincia": "Río Negro",
+        "direccion": "Ruta Provincial 80 S/N - CP: 8400",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "11/29 (2348 m x 48 m) Asfalto",
+        "codigo de identificacion": "BRC",
+        "latitud": "-41.146634",
+        "longitud": "-71.161972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.584111,
+          -34.455348
+        ]
+      },
+      "properties": {
+        "aeropuerto": "San Fernando",
+        "provincia": "Buenos Aires",
+        "direccion": "Ruta 202 y Balcarce - CP: 1646",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "05/23 (1801 m x 30 m) Asfalto",
+        "codigo de identificacion": "SFD",
+        "latitud": "-34.455348",
+        "longitud": "-58.584111"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.42267,
+          -31.571825
+        ]
+      },
+      "properties": {
+        "aeropuerto": "San Juan, Domingo Faustino Sarmiento",
+        "provincia": "San Juan",
+        "direccion": "Ruta Nacional 20, Km 12 - CP: 5417",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "18/36 (2460 m x 45 m) Asfalto",
+        "codigo de identificacion": "UAQ",
+        "latitud": "-31.571825",
+        "longitud": "-68.42267"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.350611,
+          -33.274958
+        ]
+      },
+      "properties": {
+        "aeropuerto": "San Luis, Brig. Mayor Cesar Raul Ojeda",
+        "provincia": "San Luis",
+        "direccion": "Av. Fuerza Aérea 3095 - CP: 5700",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "01/19 (2950 m x 30 m) Asfalto",
+        "codigo de identificacion": "LUQ",
+        "latitud": "-33.274958",
+        "longitud": "-66.350611"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.185833,
+          -32.384445
+        ]
+      },
+      "properties": {
+        "aeropuerto": "San Luis, Valle del Conlara",
+        "provincia": "San Luis",
+        "direccion": "Ruta Provincial 55",
+        "concesionado": "No",
+        "explotador": "EDA",
+        "pistas": "02/20 (2550 m x 45 m) Hormigón",
+        "codigo de identificacion": "RLO",
+        "latitud": "-32.384445",
+        "longitud": "-65.185833"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.141986,
+          -40.081795
+        ]
+      },
+      "properties": {
+        "aeropuerto": "San Martín de los Andes, Aviador Carlos Campos",
+        "provincia": "Neuquén",
+        "direccion": "Ruta 40, km 22",
+        "concesionado": "No",
+        "explotador": "Dirección Provincial de Aeronaútica de Neuquén",
+        "pistas": "06/24 (2500 m x 45 m) Asfalto",
+        "codigo de identificacion": "CPC",
+        "latitud": "-40.081795",
+        "longitud": "-71.141986"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.403549,
+          -34.58646
+        ]
+      },
+      "properties": {
+        "aeropuerto": "San Rafael, S.A. Santiago Germano",
+        "provincia": "Mendoza",
+        "direccion": "Ruta Provincial 143, Las Paredes - CP: M5601",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "11/29 (2110 m x 30 m) Asfalto",
+        "codigo de identificacion": "AFA",
+        "latitud": "-34.58646",
+        "longitud": "-68.403549"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.806086,
+          -31.709227
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Santa Fe, Sauce Viejo",
+        "provincia": "Santa Fe",
+        "direccion": "Ruta 11 km S/N - CP: S3034",
+        "concesionado": "No",
+        "explotador": "Provincia de Santa Fé",
+        "pistas": "03/21 (2325 m x 30 m) Asfalto",
+        "codigo de identificacion": "SFN",
+        "latitud": "-31.709227",
+        "longitud": "-60.806086"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.279714,
+          -36.591836
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Santa Rosa",
+        "provincia": "La Pampa",
+        "direccion": "Ruta 35, Km 330 - CP: 6300",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "01/19 (2300 m x 30 m) Asfalto",
+        "codigo de identificacion": "RSA",
+        "latitud": "-36.591836",
+        "longitud": "-64.279714"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.719792,
+          -36.540776
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Santa Teresita",
+        "provincia": "Buenos Aires",
+        "direccion": "Ruta 11 km 325 S/N - CP: B7107",
+        "concesionado": "No",
+        "explotador": "Municipalidad del Partido de la Costa",
+        "pistas": "17/35 (1500 m x 30 m) Asfalto",
+        "codigo de identificacion": "STT",
+        "latitud": "-36.540776",
+        "longitud": "-56.719792"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.227722,
+          -37.225333
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Tandil, Héroes de Malvinas",
+        "provincia": "Buenos Aires",
+        "direccion": "Sección Chacras, Acceso a Base Aérea S/N - CP: B7000",
+        "concesionado": "No",
+        "explotador": "ANAC",
+        "pistas": "01/19 (2550 m x 48 m) Hormigón",
+        "codigo de identificacion": "TDL",
+        "latitud": "-37.225333",
+        "longitud": "-59.227722"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.794143,
+          -22.615007
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Tartagal, General E. Mosconi",
+        "provincia": "Salta",
+        "direccion": "Ruta Nacional 34 km 1423 - CP: A4562",
+        "concesionado": "No",
+        "explotador": "Provincia de Salta",
+        "pistas": "02/20 (2500 m x 45 m) Aslfato",
+        "codigo de identificacion": "TTG",
+        "latitud": "-22.615007",
+        "longitud": "-63.794143"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.273608,
+          -43.209906
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Trelew, Almirante Zar",
+        "provincia": "Chubut",
+        "direccion": "Acceso a Aeropuerto s/n - CP: 9100",
+        "concesionado": "Si",
+        "explotador": "London Supply S.A.C.I.F.I.",
+        "pistas": "07/25 (2560 m x 45 m) Hormigón",
+        "codigo de identificacion": "REL",
+        "latitud": "-43.209906",
+        "longitud": "-65.273608"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.108402,
+          -26.835792
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Tucumán, Teniente Benjamin Matienzo",
+        "provincia": "Tucumán",
+        "direccion": "Delfín Gallo S/N - CP: 4117",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "02/20 (3500 m x 45 m) Hormigón",
+        "codigo de identificacion": "TUC",
+        "latitud": "-26.835792",
+        "longitud": "-65.108402"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.309652,
+          -54.842158
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Ushuaia, Malvinas Argentinas",
+        "provincia": "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
+        "direccion": "Roque Sánchez Galdeano S/N - CP: 9401",
+        "concesionado": "Si",
+        "explotador": "London Supply S.A.C.I.F.I.",
+        "pistas": "07/25 (2800 m x 45 m) Hormigón",
+        "codigo de identificacion": "USH",
+        "latitud": "-54.842158",
+        "longitud": "-68.309652"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.005537,
+          -40.863014
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Viedma, Gobernador Castello",
+        "provincia": "Río Negro",
+        "direccion": "Ruta provincial 51, Km 7 - CP: 8500",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "11/29 (2550 m x 45 m) Asfalto | 02/20 (1510 m x 45 m) Asfalto",
+        "codigo de identificacion": "VDM",
+        "latitud": "-40.863014",
+        "longitud": "-63.005537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.020967,
+          -37.234436
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Villa Gesell",
+        "provincia": "Buenos Aires",
+        "direccion": "Ruta provincial 11 - CP: B7165",
+        "concesionado": "No",
+        "explotador": "Municipalidad de Villa Gesell",
+        "pistas": "11/29 (1740 m x 28 m) Asfalto",
+        "codigo de identificacion": "VGL",
+        "latitud": "-37.234436",
+        "longitud": "-57.020967"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.373994,
+          -33.719615
+        ]
+      },
+      "properties": {
+        "aeropuerto": "Villa Mercedes",
+        "provincia": "San Luis",
+        "direccion": "Ruta Provincial 24 - CP: 5733",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "06/24 (2400 m x 50 m) Asfalto | 10/28 (2400 m x 45 m) Asfalto",
+        "codigo de identificacion": "VME",
+        "latitud": "-33.719615",
+        "longitud": "-65.373994"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.599066,
+          -34.605399
+        ]
+      },
+      "properties": {
+        "aeropuerto": "El Palomar",
+        "provincia": "Buenos Aires",
+        "direccion": "Matienzo e Itacumbu, El Palomar, I Brigada Aérea de la FFAA",
+        "concesionado": "Si",
+        "explotador": "Aeropuertos Argentina 2000 S.A.",
+        "pistas": "16/34 (2110 x 50 m ) Hormigón",
+        "codigo de identificacion": "EPA",
+        "latitud": "-34.605399",
+        "longitud": "-58.599066"
+      }
+    }
+  ]
+}

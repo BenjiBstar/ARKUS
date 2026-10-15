@@ -1,0 +1,724 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.2492,
+          -31.3986
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Córdoba",
+        "fuerza": "Ejército",
+        "comando": "Fuerza de Despliegue Rápido (FDR)",
+        "unidades": "IV Brigada Aerotransportada (Infantería Paracaidista): Armamento ligero, Vehículos Polaris"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.4217,
+          -24.7739
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Salta",
+        "fuerza": "Ejército",
+        "comando": "V Brigada de Montaña",
+        "unidades": "V Brigada de Montaña (Cazadores de Montaña): Armamento ligero de montaña"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.9189,
+          -27.4206
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Posadas",
+        "fuerza": "Ejército",
+        "comando": "XII Brigada de Monte",
+        "unidades": "XII Brigada de Monte (Cazadores de Monte): Armamento de selva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.4831,
+          -45.8504
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Comodoro Rivadavia",
+        "fuerza": "Ejército",
+        "comando": "IX Brigada Mecanizada",
+        "unidades": "IX Brigada Mecanizada (Infantería Mecanizada): VC M-113, Panhard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.1309,
+          -37.3117
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Tandil",
+        "fuerza": "Ejército",
+        "comando": "I Brigada Blindada",
+        "unidades": "I Brigada Blindada (Blindados): TAM (Tanque Argentino Mediano), TAM 2C"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.103,
+          -38.895
+        ]
+      },
+      "properties": {
+        "nombre": "Base Naval Puerto Belgrano",
+        "fuerza": "Armada",
+        "comando": "Comando de la Flota de Mar / Infantería de Marina",
+        "unidades": "Comando de la Flota de Mar (Guerra de Superficie): Destructores MEKO 360, Corbetas MEKO 140 | Fuerza de Infantería de Marina de la Flota de Mar (Anfibia): LVTP-7, LARC-5, Panhard AML-90, Artillería Antiaérea"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.5358,
+          -38.0357
+        ]
+      },
+      "properties": {
+        "nombre": "Base Naval Mar del Plata",
+        "fuerza": "Armada",
+        "comando": "Área Naval Atlántica / Fuerza de Submarinos",
+        "unidades": "Comando de la Fuerza de Submarinos (Submarina): Submarino clase TR-1700 / IKL-209 | División de Patrullado Marítimo (Patrullaje): Patrulleros Oceánicos (OPV), Corbetas A-69"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.3075,
+          -54.8055
+        ]
+      },
+      "properties": {
+        "nombre": "Base Naval Ushuaia",
+        "fuerza": "Armada",
+        "comando": "Área Naval Austral",
+        "unidades": "Fuerza de Infantería de Marina Austral (Zona Fría): Batallones N°4 y N°5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.1643,
+          -38.7291
+        ]
+      },
+      "properties": {
+        "nombre": "Base Aeronaval Comandante Espora",
+        "fuerza": "Armada",
+        "comando": "Fuerza Aeronaval N° 2",
+        "unidades": "Fuerza Aeronaval N° 2 (Ataque / Antisubmarina): Super Étendard, Grumman S-2T Turbo Tracker, Sea King"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.2704,
+          -43.2104
+        ]
+      },
+      "properties": {
+        "nombre": "Base Aeronaval Almirante Zar (Trelew)",
+        "fuerza": "Armada",
+        "comando": "Fuerza Aeronaval N° 3",
+        "unidades": "Fuerza Aeronaval N° 3 (Exploración): Lockheed P-3B Orion"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.0242,
+          -34.0958
+        ]
+      },
+      "properties": {
+        "nombre": "Base Naval Zárate",
+        "fuerza": "Armada",
+        "comando": "Área Naval Fluvial",
+        "unidades": "Batallón de Infantería de Marina N° 3 (Fluvial): Operaciones ribereñas, Lanchas patrulleras"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.3853,
+          -33.7236
+        ]
+      },
+      "properties": {
+        "nombre": "V Brigada Aérea (Villa Reynolds)",
+        "fuerza": "Fuerza Aérea",
+        "comando": "Comando de Alistamiento y Adiestramiento",
+        "unidades": "Grupo 5 de Caza (Caza Bombardero): A-4AR Fightinghawk"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.2272,
+          -37.2348
+        ]
+      },
+      "properties": {
+        "nombre": "VI Brigada Aérea (Tandil)",
+        "fuerza": "Fuerza Aérea",
+        "comando": "Comando de Alistamiento y Adiestramiento",
+        "unidades": "Grupo 6 de Caza (Caza e Instrucción): IA-63 Pampa III"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.6042,
+          -34.6097
+        ]
+      },
+      "properties": {
+        "nombre": "I Brigada Aérea (El Palomar)",
+        "fuerza": "Fuerza Aérea",
+        "comando": "Comando de Alistamiento y Adiestramiento",
+        "unidades": "Grupo 1 de Transporte Aéreo (Transporte Estratégico): C-130 Hercules, Boeing 737, Fokker F-28"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.6806,
+          -29.2064
+        ]
+      },
+      "properties": {
+        "nombre": "III Brigada Aérea (Reconquista)",
+        "fuerza": "Fuerza Aérea",
+        "comando": "Comando de Alistamiento y Adiestramiento",
+        "unidades": "Grupo 3 de Ataque (Guerra Electrónica / Exploración): IA-58 Pucará Fénix, EMB-312 Tucano"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.3126,
+          -51.6087
+        ]
+      },
+      "properties": {
+        "nombre": "X Brigada Aérea (Río Gallegos)",
+        "fuerza": "Fuerza Aérea",
+        "comando": "Comando de Alistamiento y Adiestramiento",
+        "unidades": "Grupo 10 de Caza (Despliegue Sur): IA-63 Pampa III, Twin Otter"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.2894,
+          -63.4717
+        ]
+      },
+      "properties": {
+        "nombre": "Base Conjunta Petrel",
+        "fuerza": "Conjunto",
+        "comando": "Comando Conjunto Antártico (COCOANTAR)",
+        "unidades": "Dotación Antártica Permanente (Soporte Logístico Polar): Infraestructura modular térmica, Rompehielos ARA Almirante Irízar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.195,
+          -54.5126
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Conjunta Tolhuin",
+        "fuerza": "Conjunto",
+        "comando": "Comando Operacional",
+        "unidades": "Elementos Conjuntos Tierra del Fuego (Presencia Soberana): Despliegue integral (Ejército, Armada, Fuerza Aérea)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.6667,
+          -34.5333
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Buenos Aires (Campo de Mayo)",
+        "fuerza": "Ejército",
+        "comando": "Comando de Adiestramiento y Alistamiento",
+        "unidades": "Agrupación de Fuerzas de Operaciones Especiales (Comandos / FF.EE): Armamento de Precisión, Comunicaciones Tácticas | Comando de Aviación de Ejército (Apoyo de Combate): Helicópteros Bell Huey II, Super Puma, AB-206 | Fuerza de Despliegue Rápido (FDR) (Infantería Ligera): Vehículos Polaris MRZR, Armamento Ligero"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.5147,
+          -35.0805
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Magdalena",
+        "fuerza": "Ejército",
+        "comando": "I Brigada Blindada",
+        "unidades": "Regimiento de Caballería de Tanques 8 (Caballería Blindada): Tanque Argentino Mediano (TAM)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.8585,
+          -36.7797
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Azul",
+        "fuerza": "Ejército",
+        "comando": "I Brigada Blindada",
+        "unidades": "Grupo de Artillería Blindado 1 (Apoyo de Fuego): VCA Palmaria 155mm | Regimiento de Caballería de Tanques 10 (Caballería Blindada): Tanque Argentino Mediano (TAM)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0888,
+          -29.7126
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Paso de los Libres",
+        "fuerza": "Ejército",
+        "comando": "III Brigada de Monte",
+        "unidades": "Grupo de Artillería de Monte 3 (Apoyo de Fuego): Obús OTO Melara 105 mm | Regimiento de Infantería de Monte 9 (Infantería de Monte): Armamento de Selva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.2995,
+          -24.1858
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Jujuy",
+        "fuerza": "Ejército",
+        "comando": "V Brigada de Montaña",
+        "unidades": "Grupo de Artillería de Montaña 5 (Apoyo de Fuego): Obús OTO Melara 105 mm | Regimiento de Infantería de Montaña 20 (Infantería de Montaña): Armamento de Montaña"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.8,
+          -22.5167
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Tartagal",
+        "fuerza": "Ejército",
+        "comando": "V Brigada de Montaña",
+        "unidades": "Regimiento de Infantería de Monte 28 (Infantería de Monte): FAL, Equipamiento de Selva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.3444,
+          -32.5985
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Uspallata",
+        "fuerza": "Ejército",
+        "comando": "VIII Brigada de Montaña",
+        "unidades": "Grupo de Artillería de Montaña 8 (Apoyo de Fuego): Obús OTO Melara 105 mm | Regimiento de Infantería de Montaña 16 (Infantería de Montaña): Armamento ligero, Mulas de carga"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.8272,
+          -32.8908
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Mendoza",
+        "fuerza": "Ejército",
+        "comando": "VIII Brigada de Montaña",
+        "unidades": "Compañía de Cazadores de Montaña 8 (Tropas de Operaciones Especiales): Armamento Especializado, Esquíes | Regimiento de Infantería de Montaña 11 (Infantería de Montaña): Armamento de Montaña"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.5364,
+          -31.5375
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar San Juan",
+        "fuerza": "Ejército",
+        "comando": "VIII Brigada de Montaña",
+        "unidades": "Regimiento de Infantería de Montaña 22 (Infantería de Montaña): FAL, Material de Escalada"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.8558,
+          -29.413
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar La Rioja",
+        "fuerza": "Ejército",
+        "comando": "VIII Brigada de Montaña",
+        "unidades": "Regimiento de Infantería de Montaña 15 (Infantería de Montaña): FAL, Armamento de Montaña"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.7852,
+          -28.4696
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Catamarca",
+        "fuerza": "Ejército",
+        "comando": "V Brigada de Montaña",
+        "unidades": "Destacamento de Infantería de Montaña (Infantería de Montaña): Despliegue operativo y logístico en altura"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.0591,
+          -38.9516
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Neuquén",
+        "fuerza": "Ejército",
+        "comando": "VI Brigada de Montaña",
+        "unidades": "Batallón de Ingenieros de Montaña 6 (Apoyo de Combate): Maquinaria vial, Botes neumáticos, Puentes tácticos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.065,
+          -38.9028
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Zapala",
+        "fuerza": "Ejército",
+        "comando": "VI Brigada de Montaña",
+        "unidades": "Grupo de Artillería 16 (Apoyo de Fuego): Cañón CITER 155mm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.1281,
+          -51.6575
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Rospentek",
+        "fuerza": "Ejército",
+        "comando": "XI Brigada Mecanizada",
+        "unidades": "Escuadrón de Exploración de Caballería Blindado 11 (Exploración): Panhard AML-90 | Regimiento de Infantería Mecanizado 35 (Infantería Mecanizada): M-113"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.9144,
+          -49.9855
+        ]
+      },
+      "properties": {
+        "nombre": "Guarnición Militar Comandante Luis Piedrabuena",
+        "fuerza": "Ejército",
+        "comando": "XI Brigada Mecanizada",
+        "unidades": "Regimiento de Caballería de Tanques 11 (Caballería Blindada): SK-105 Kürassier"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.2917,
+          -35.3456
+        ]
+      },
+      "properties": {
+        "nombre": "Base Aeronaval Punta Indio",
+        "fuerza": "Armada",
+        "comando": "Fuerza Aeronaval N° 1",
+        "unidades": "Escuadra Aeronaval N° 1 (Instrucción y Vigilancia): Beechcraft T-34C-1 Turbo Mentor, B-200 Cormorán"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.3683,
+          -34.5956
+        ]
+      },
+      "properties": {
+        "nombre": "Apostadero Naval Buenos Aires",
+        "fuerza": "Armada",
+        "comando": "Comando de Tránsito Marítimo",
+        "unidades": "Escuadrón de Buques Multipropósito (Apoyo Fluvial y Logístico): Buques ARA Ciudad de Rosario, ARA Ciudad de Zárate | Muelle Base Rompehielos (Logística Antártica): Base operativa ARA Almirante Irízar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.8833,
+          -47.75
+        ]
+      },
+      "properties": {
+        "nombre": "Apostadero Naval Puerto Deseado",
+        "fuerza": "Armada",
+        "comando": "Área Naval Atlántica",
+        "unidades": "Estación de Salvamento (Búsqueda y Rescate (SAR)): Patrullaje litoral y control de ZEE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.48,
+          -31.782
+        ]
+      },
+      "properties": {
+        "nombre": "II Brigada Aérea (Paraná)",
+        "fuerza": "Fuerza Aérea",
+        "comando": "Comando de Alistamiento y Adiestramiento",
+        "unidades": "Grupo 2 de Comunicaciones / Fotográfico (Guerra Electrónica / Reconocimiento): Learjet 35A"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.7903,
+          -32.8251
+        ]
+      },
+      "properties": {
+        "nombre": "IV Brigada Aérea (Mendoza)",
+        "fuerza": "Fuerza Aérea",
+        "comando": "Comando de Alistamiento y Adiestramiento",
+        "unidades": "Escuadrón de Búsqueda y Rescate (SAR): Helicópteros SA315B Lama | Grupo 4 de Caza (Instrucción Avanzada de Caza): IA-63 Pampa II/III"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.7891,
+          -34.6543
+        ]
+      },
+      "properties": {
+        "nombre": "VII Brigada Aérea (Moreno)",
+        "fuerza": "Fuerza Aérea",
+        "comando": "Comando de Alistamiento y Adiestramiento",
+        "unidades": "Grupo 7 de Helicópteros (Asalto Aéreo / SAR): Bell 412, Bell 212, Mi-171E | Grupo de Operaciones Especiales (GOE) (Comandos): Armamento Especial"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.4667,
+          -45.7833
+        ]
+      },
+      "properties": {
+        "nombre": "IX Brigada Aérea (Comodoro Rivadavia)",
+        "fuerza": "Fuerza Aérea",
+        "comando": "Comando de Alistamiento y Adiestramiento",
+        "unidades": "Grupo 9 de Transporte Aéreo (Sostén Logístico / LADE): SAAB 340B, DHC-6 Twin Otter"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.73,
+          -34.66
+        ]
+      },
+      "properties": {
+        "nombre": "Estación Radar Merlo",
+        "fuerza": "Fuerza Aérea",
+        "comando": "Comando Conjunto Aeroespacial",
+        "unidades": "Centro de Operaciones Aeroespaciales (COA) (Comando y Control): Radares de Alerta Temprana"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.59,
+          -24.7
+        ]
+      },
+      "properties": {
+        "nombre": "Sitio Radar Las Lomitas",
+        "fuerza": "Fuerza Aérea",
+        "comando": "Comando Conjunto Aeroespacial",
+        "unidades": "Escuadrón VYCA Las Lomitas (Vigilancia Aeroespacial): Radar RPA-240 / RPA-170M"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.05,
+          -27.44
+        ]
+      },
+      "properties": {
+        "nombre": "Sitio Radar Resistencia",
+        "fuerza": "Fuerza Aérea",
+        "comando": "Comando Conjunto Aeroespacial",
+        "unidades": "Escuadrón VYCA Resistencia (Vigilancia Aeroespacial): Radar RPA-240"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.97,
+          -27.38
+        ]
+      },
+      "properties": {
+        "nombre": "Sitio Radar Posadas",
+        "fuerza": "Fuerza Aérea",
+        "comando": "Comando Conjunto Aeroespacial",
+        "unidades": "Escuadrón VYCA Posadas (Vigilancia Aeroespacial): Radar RPA-240"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nombre": "Área Material Río Cuarto",
+        "fuerza": "Fuerza Aérea",
+        "comando": "Dirección General de Material"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.2778,
+          -33.096
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+name: Keep ARKUS Awake
+
+on:
+  schedule:
+    # Se ejecuta automáticamente cada 10 minutos
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render Server
+        run: curl -sSf https://TU-APP-ARKUS.onrender.com/ping > /dev/null
