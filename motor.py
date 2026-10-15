@@ -9,7 +9,7 @@ from urllib.parse import unquote
 app = FastAPI()
 
 app.mount("/Datos", StaticFiles(directory="Datos"), name="Datos")
-app.mount("/Img", StaticFiles(directory="Img"), name="Img")
+app.mount("/Img", StaticFiles(directory="img"), name="img")
 
 def consultar_boveda(query, parametros=()):
     try:
