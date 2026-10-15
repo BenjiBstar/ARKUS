@@ -311,16 +311,15 @@ def inteligencia_dinamica(tabla: str, identificador: str):
 # ==========================================
 @app.get("/")
 def home():
-    # Lee el token seguro que guardaste en el panel de Render
-    mapbox_token = os.environ.get("MAPBOX_TOKEN", "")
+    mapbox_token = os.environ.get("MAPBOX_TOKEN", "NO_LLEGO_NADA")
+    print(f"=== TOKEN RECIBIDO DE RENDER: {mapbox_token} ===")
     
-    # Lee tu archivo interfaz.html
     with open("interfaz.html", "r", encoding="utf-8") as f:
         html_content = f.read()
     
-    # Reemplaza el texto comodín por tu token real de Mapbox
     html_content = html_content.replace("TU_TOKEN_AQUI", mapbox_token)
     
+    print(f"=== HTML REEMPLAZADO EXITOSAMENTE ===")
     return HTMLResponse(content=html_content)
 
 # =====================================================================
