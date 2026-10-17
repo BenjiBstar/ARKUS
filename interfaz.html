@@ -26,14 +26,26 @@
         
 
         #hud-explicacion {
-            box-sizing: border-box; position: absolute; width: 750px; max-width: calc(100vw - 340px); left: 300px; top: 60px;   
+            box-sizing: border-box; position: absolute; width: 680px; max-width: calc(100vw - 340px); left: 300px; top: 52px;   
             background: rgba(117, 114, 114, 0.4); border: 1px solid rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(7.5px); -webkit-backdrop-filter: blur(7.5px);
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); z-index: 15; color: white;
-            font-family: 'Consolas', monospace; font-size: 14px; line-height: 1.6; padding: 30px 25px;
+            box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.7); z-index: 15; color: white;
+            font-family: 'Consolas', monospace; font-size: 13.5px; line-height: 1.55; 
+            padding: 22px 35px 22px 25px; 
             opacity: 0; pointer-events: none; transition: opacity 0.3s ease-in-out; 
         }
         #hud-explicacion.visible { opacity: 1; pointer-events: auto; }
+
+        /* Botón de cierre posicionado de forma armónica y separado de los bordes */
+        #hud-explicacion .btn-cerrar {
+            position: absolute; top: 15px; right: 15px; 
+            background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.35); 
+            color: #ffffff; cursor: pointer; font-size: 13px; width: 26px; height: 26px;
+            display: flex; align-items: center; justify-content: center; transition: 0.2s; z-index: 2;
+        }
+        #hud-explicacion .btn-cerrar:hover { 
+            background: rgba(255, 0, 0, 0.6); border-color: #ff2a2a; 
+        }
 
         /* 2. MENÚ LATERAL IZQUIERDO */
         #hud-lateral-izquierdo { 
@@ -101,6 +113,30 @@
             opacity: 0; pointer-events: none; 
             transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; 
             scrollbar-width: thin; scrollbar-color: rgba(0, 200, 255, 0.5) rgba(0, 0, 0, 0.2);
+        }
+        /* Separación entre las líneas verticales y el texto + aire tipográfico en todos los Hubs */
+        #panel-derecho .intel-parrafo {
+            line-height: 1.68 !important;
+            letter-spacing: 0.35px !important;
+            margin-bottom: 14px !important;
+        }
+        /* Detecta cualquier bloque con línea vertical izquierda y despega el texto 14px */
+        #panel-derecho [style*="border-left"] {
+            padding-left: 14px !important;
+            padding-right: 10px !important;
+            line-height: 1.65 !important;
+            letter-spacing: 0.35px !important;
+            border-radius: 0 3px 3px 0;
+        }
+        #panel-derecho .intel-campo {
+            letter-spacing: 0.4px !important;
+            line-height: 1.5 !important;
+            margin-bottom: 15px !important;
+        }
+        #panel-derecho .intel-titulo {
+            letter-spacing: 0.8px !important;
+            line-height: 1.35 !important;
+            margin-bottom: 16px !important;
         }
         #panel-derecho::-webkit-scrollbar { width: 5px; }
         #panel-derecho::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); }
@@ -336,7 +372,9 @@
     </button>
     <button class="submenu-btn" id="btn-sub-biomas">
         <span class="btn-contenido">
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 1L12 5L10 6L14 10L11 11L15 15H1L5 11L2 10L6 6L4 5L8 1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.0002 18.3333V15.8333M14.1668 11.6667L16.6668 14.4167C16.781 14.5331 16.8585 14.6806 16.8898 14.8407C16.921 15.0008 16.9045 15.1665 16.8424 15.3174C16.7803 15.4682 16.6752 15.5975 16.5404 15.6892C16.4055 15.7809 16.2466 15.831 16.0835 15.8333H3.91684C3.75374 15.831 3.59489 15.7809 3.46 15.6892C3.3251 15.5975 3.22009 15.4682 3.15798 15.3174C3.09587 15.1665 3.0794 15.0008 3.1106 14.8407C3.1418 14.6806 3.21931 14.5331 3.33351 14.4167L5.83351 11.6667H5.58351C5.4204 11.6644 5.26156 11.6143 5.12666 11.5225C4.99177 11.4308 4.88676 11.3015 4.82465 11.1507C4.76254 10.9999 4.74607 10.8341 4.77727 10.674C4.80847 10.5139 4.88598 10.3665 5.00018 10.25L7.50018 7.5H7.33351C7.1633 7.51535 6.99249 7.47801 6.84422 7.39301C6.69595 7.30802 6.57739 7.1795 6.50462 7.02487C6.43186 6.87023 6.40839 6.69696 6.43741 6.52854C6.46642 6.36013 6.54652 6.2047 6.66684 6.08333L10.0002 2.5L13.3335 6.08333C13.4538 6.2047 13.5339 6.36013 13.5629 6.52854C13.592 6.69696 13.5685 6.87023 13.4957 7.02487C13.423 7.1795 13.3044 7.30802 13.1561 7.39301C13.0079 7.47801 12.8371 7.51535 12.6668 7.5H12.5002L15.0002 10.25C15.1144 10.3665 15.1919 10.5139 15.2231 10.674C15.2543 10.8341 15.2378 10.9999 15.1757 11.1507C15.1136 11.3015 15.0086 11.4308 14.8737 11.5225C14.7388 11.6143 14.5799 11.6644 14.4168 11.6667H14.1668Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
             Regiones Forestales (UMSEF)
         </span>
     </button>
@@ -365,7 +403,7 @@
                 Provincias
             </span>
         </button>
-        <button class="btn-toggle activo" id="btn-zee">
+        <button class="btn-toggle" id="btn-zee">
             <span class="btn-contenido">
                 <svg width="18" height="18" viewBox="0 0 17 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.625 3.125C2.69417 3.125 4.24583 0.625 4.24583 0.625C4.24583 0.625 5.7975 3.125 7.86667 3.125C9.93583 3.125 12.0042 0.625 12.0042 0.625C12.0042 0.625 14.0733 3.125 15.625 3.125M0.625 8.95833C2.69417 8.95833 4.24583 6.45833 4.24583 6.45833C4.24583 6.45833 5.7975 8.95833 7.86667 8.95833C9.93583 8.95833 12.0042 6.45833 12.0042 6.45833C12.0042 6.45833 14.0733 8.95833 15.625 8.95833" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 Límites Marítimos
@@ -522,8 +560,14 @@
 
         const ejercitoActivo = document.getElementById('btn-fuerzas') && document.getElementById('btn-fuerzas').classList.contains('activo');
         const armadaActiva = document.getElementById('btn-armada') && document.getElementById('btn-armada').classList.contains('activo');
-        const faaActiva = (document.getElementById('btn-fuerza-aerea') && document.getElementById('btn-fuerza-aerea').classList.contains('activo')) || (document.getElementById('btn-sub-bases-aereas') && document.getElementById('btn-sub-bases-aereas').classList.contains('activo'));
-        const radaresActivos = document.getElementById('btn-sub-radares') && document.getElementById('btn-sub-radares').classList.contains('activo');
+        
+        // Verificación directa sobre la capa real del mapa para evitar falsos positivos
+        const capaFaaVisible = map.getLayer('capa-fuerza-aerea') && map.getLayoutProperty('capa-fuerza-aerea', 'visibility') === 'visible';
+        const capaRadaresVisible = map.getLayer('capa-sinvica-cobertura') && map.getLayoutProperty('capa-sinvica-cobertura', 'visibility') === 'visible';
+        
+        const faaActiva = capaFaaVisible;
+        const radaresActivos = capaRadaresVisible;
+
         
         if (ejercitoActivo || armadaActiva || faaActiva || radaresActivos) {
             contenidoHTML += `<div class="leyenda-grupo"><span class="leyenda-titulo">Defensa:</span>${ejercitoActivo ? '<div><span class="simbolo-punto" style="background:#ff2a2a;"></span> Ejército</div>' : ''}${armadaActiva ? '<div><span class="simbolo-punto" style="background:#0033cc;"></span> Armada</div>' : ''}${faaActiva ? '<div><span class="simbolo-punto" style="background:#66ccff;"></span> Fuerza Aérea</div>' : ''}${radaresActivos ? '<div><span class="simbolo-punto" style="background:#ffffff; border-color:#00ff00;"></span> Radar SINVICA (444 km)</div>' : ''}</div>`;
@@ -576,44 +620,7 @@
     map.on('style.load', () => {
         map.setFog({ 'color': 'rgb(14, 17, 23)', 'high-color': 'rgb(0, 0, 0)', 'space-color': 'rgb(0, 0, 0)' });
         
-        const texturasPaises = [
-            // ARGENTINA: Subido hacia el centro-norte (-27.5 a -38.0) y más alto (10.5° de alto)
-            { 
-                id: 'textura-arg', 
-                url: 'Img/escudo_republica_argentina.png', 
-                coords: [[-69.0, -27.5], [-60.5, -27.5], [-60.5, -38.0], [-69.0, -38.0]] 
-            },
-            // CHILE: Ensanchado (-75.2 a -68.2) y acortado en vertical (-31.5 a -37.5) para que no quede angosto
-            { 
-                id: 'textura-chi', 
-                url: 'Img/escudo_republica_de_chile.png', 
-                coords: [[-75.2, -31.5], [-68.2, -31.5], [-68.2, -37.5], [-75.2, -37.5]] 
-            },
-            // BOLIVIA: Centrado en el corazón del territorio boliviano (Oeste -67.3, Este -61.3, Norte -14.2, Sur -19.8)
-            { 
-                id: 'textura-bol', 
-                url: 'Img/escudo_estado_plurinacional_de_bolivia.png', 
-                coords: [[-67.3, -14.2], [-61.3, -14.2], [-61.3, -19.8], [-67.3, -19.8]] 
-            },
-            // PARAGUAY: Más pequeño y proporcionado (2.8° x 2.8° en vez de 4° x 4°)
-            { 
-                id: 'textura-par', 
-                url: 'Img/escudo_republica_del_paraguay.png', 
-                coords: [[-59.6, -21.8], [-56.8, -21.8], [-56.8, -24.6], [-59.6, -24.6]] 
-            },
-            // URUGUAY: Un poco más abajo hacia el sur (-31.6 a -34.6) y centrado en su territorio
-            { 
-                id: 'textura-uru', 
-                url: 'Img/escudo_republica_oriental_del_uruguay.png', 
-                coords: [[-57.8, -31.6], [-54.2, -31.6], [-54.2, -34.6], [-57.8, -34.6]] 
-            },
-            // BRASIL: Intacto
-            { 
-                id: 'textura-bra', 
-                url: 'Img/escudo_republica_federativa_de_brasil.png', 
-                coords: [[-60.0, -5.0], [-45.0, -5.0], [-45.0, -20.0], [-60.0, -20.0]] 
-            }
-        ];
+        const texturasPaises = [];
 
         texturasPaises.forEach(textura => {
             map.addSource(textura.id, { 'type': 'image', 'url': textura.url, 'coordinates': textura.coords });
@@ -1277,40 +1284,61 @@
         }).catch(err => console.error("Error volcanes: ", err));
     });
 
-    // CONFIGURACIÓN DE BOTONES Y MENÚ
-    function configurarBoton(idBoton, idsCapas) {
-        const boton = document.getElementById(idBoton);
-        if (!boton) return; 
-        if (boton.classList.contains('activo')) { idsCapas.forEach(idCapa => { if (map.getLayer(idCapa)) map.setLayoutProperty(idCapa, 'visibility', 'visible'); }); }
-        boton.addEventListener('click', (e) => {
-            e.stopPropagation(); boton.classList.toggle('activo');
-            const visibilidad = boton.classList.contains('activo') ? 'visible' : 'none';
-            idsCapas.forEach(idCapa => { if (map.getLayer(idCapa)) map.setLayoutProperty(idCapa, 'visibility', visibilidad); });
-            actualizarLeyendasHUD();
-        });
-    }
+    // =========================================================
+    // CONFIGURACIÓN UNIFICADA DE BOTONES, SUBMENÚS Y MEMORIA
+    // =========================================================
+    const REGISTRO_CAPAS_BOTONES = {};
+    window.capaActivaPanelDerecho = null;
+    window.ultimaCapaModoLibre = null;
 
-    function vincularSubmenu(idBotonPrincipal, idSubmenu) {
-        const btn = document.getElementById(idBotonPrincipal); const sub = document.getElementById(idSubmenu);
-        if (!btn || !sub) return;
-        function acomodarSubmenu() {
-            if (sub.classList.contains('abierto')) {
-                const rect = btn.getBoundingClientRect(); let posicionTop = rect.top;
-                const alturaPantalla = window.innerHeight; const alturaCuadro = sub.offsetHeight;
-                if ((posicionTop + alturaCuadro) > alturaPantalla) { posicionTop = alturaPantalla - alturaCuadro - 15; }
-                sub.style.top = posicionTop + 'px';
-            }
+    // Limpia el registro cuando el panel se cierra manualmente (✖ o clic en vacío)
+    const originalCerrarPanelIntel = cerrarPanelIntel;
+    cerrarPanelIntel = function() {
+        window.capaActivaPanelDerecho = null;
+        if (!document.body.classList.contains('modo-wargame-activo')) {
+            window.ultimaCapaModoLibre = null;
         }
-        document.getElementById('hud-lateral-izquierdo').addEventListener('scroll', acomodarSubmenu);
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation(); const estaAbierto = sub.classList.contains('abierto');
-            if (estaAbierto) { sub.classList.remove('abierto'); btn.classList.remove('activo'); } 
-            else { sub.classList.add('abierto'); btn.classList.add('activo'); acomodarSubmenu(); }
-        });
-    }
+        originalCerrarPanelIntel();
+    };
 
-    document.addEventListener('click', (e) => {
-        // MAPA COMPLETO DE LOS 7 BOTONES PRINCIPALES Y SUS SUBMENÚS
+    // Rastrea automáticamente qué capa abrió el Hub derecho sin tocar los 35 eventos individuales
+    (function vincularRastreoCapasPanel() {
+        const originalMapOn = map.on.bind(map);
+        map.on = function(type, layerOrListener, listener) {
+            if (type === 'click' && typeof listener === 'function' && layerOrListener) {
+                const wrapped = function(e) {
+                    const capaClick = (e && e.features && e.features[0] && e.features[0].layer && e.features[0].layer.id)
+                        || (Array.isArray(layerOrListener) ? layerOrListener[0] : layerOrListener);
+                    const panelEl = document.getElementById('panel-derecho');
+                    const htmlPrevio = panelEl ? panelEl.innerHTML : '';
+                    let disparoAccion = false;
+
+                    const origFetch = window.fetch;
+                    window.fetch = function() {
+                        disparoAccion = true;
+                        return origFetch.apply(this, arguments);
+                    };
+
+                    try {
+                        const resultado = listener.apply(this, arguments);
+                        const htmlNuevo = panelEl ? panelEl.innerHTML : '';
+                        if (disparoAccion || htmlNuevo !== htmlPrevio) {
+                            window.capaActivaPanelDerecho = capaClick;
+                            if (!document.body.classList.contains('modo-wargame-activo')) {
+                                window.ultimaCapaModoLibre = capaClick;
+                            }
+                        }
+                        return resultado;
+                    } finally {
+                        window.fetch = origFetch;
+                    }
+                };
+                return originalMapOn(type, layerOrListener, wrapped);
+            }
+            return originalMapOn(type, layerOrListener, listener);
+        };
+    })();
+
     const MAPA_PADRES_SUBMENUS = [
         { padre: 'btn-fuerza-aerea', sub: 'sub-fuerza-aerea' },
         { padre: 'btn-rutas', sub: 'sub-rutas' },
@@ -1326,8 +1354,7 @@
             const btnP = document.getElementById(item.padre);
             const subDiv = document.getElementById(item.sub);
             if (btnP && subDiv) {
-                // Verifica si adentro del submenú hay algún sub-botón con la clase .activo
-                const tieneSubActivo = subDiv.querySelector('.activo') !== null;
+                const tieneSubActivo = subDiv.querySelector('.submenu-btn.activo') !== null;
                 const estaAbierto = subDiv.classList.contains('abierto');
                 if (tieneSubActivo || estaAbierto) {
                     btnP.classList.add('activo');
@@ -1340,15 +1367,63 @@
 
     function configurarBoton(idBoton, idsCapas) {
         const boton = document.getElementById(idBoton);
-        if (!boton) return; 
+        if (!boton) return;
+
+        // Registra las capas reales de este botón para los Teatros de Seguridad
+        REGISTRO_CAPAS_BOTONES[idBoton] = idsCapas;
+
         if (boton.classList.contains('activo')) {
-            idsCapas.forEach(idCapa => { if (map.getLayer(idCapa)) map.setLayoutProperty(idCapa, 'visibility', 'visible'); });
+            idsCapas.forEach(idCapa => {
+                if (map.getLayer(idCapa)) map.setLayoutProperty(idCapa, 'visibility', 'visible');
+            });
         }
+
         boton.addEventListener('click', (e) => {
             e.stopPropagation();
-            boton.classList.toggle('activo');
-            const visibilidad = boton.classList.contains('activo') ? 'visible' : 'none';
-            idsCapas.forEach(idCapa => { if (map.getLayer(idCapa)) map.setLayoutProperty(idCapa, 'visibility', visibilidad); });
+            const activar = !boton.classList.contains('activo');
+            boton.classList.toggle('activo', activar);
+            const visibilidad = activar ? 'visible' : 'none';
+
+            idsCapas.forEach(idCapa => {
+                if (map.getLayer(idCapa)) map.setLayoutProperty(idCapa, 'visibility', visibilidad);
+            });
+
+            // SI SE APAGA EL BOTÓN: Cierra su Hub derecho si pertenecía a esta capa y limpia estados asociados
+            if (!activar) {
+                const capaAbierta = window.capaActivaPanelDerecho || window.ultimaCapaModoLibre;
+                if (capaAbierta && idsCapas.includes(capaAbierta)) {
+                    cerrarPanelIntel();
+                }
+
+                // Limpieza adicional si se apaga Provincias
+                if (idBoton === 'btn-limite') {
+                    if (map.getLayer('provincia-resaltado')) map.setFilter('provincia-resaltado', ['==', 'nam', '']);
+                    if (capaAbierta === 'provincia-relleno') {
+                        document.getElementById('hud-barra-superior').innerHTML = memoriaHTMLArgentina;
+                        cerrarExplicacion();
+                    }
+                }
+
+                // Limpieza adicional si se apaga Límites Internacionales (Países vecinos / Fronteras)
+                if (idBoton === 'btn-limites-int') {
+                    paisesVecinos.forEach(p => {
+                        if (map.getLayer(`${p.id}-resaltado`)) map.setFilter(`${p.id}-resaltado`, ['==', 'name', '']);
+                    });
+                    if (capaAbierta && capaAbierta.endsWith('-sensor')) {
+                        document.getElementById('hud-barra-superior').innerHTML = memoriaHTMLArgentina;
+                        cerrarExplicacion();
+                    }
+                }
+
+                // Limpieza adicional si se apaga Radares SINVICA
+                if (idBoton === 'btn-sub-radares') {
+                    if (map.getLayer('capa-sinvica-destacado')) map.setFilter('capa-sinvica-destacado', ['==', 'nombre', '']);
+                }
+
+                const tooltipEl = document.getElementById('hud-tooltip');
+                if (tooltipEl) tooltipEl.classList.remove('visible');
+            }
+
             actualizarLeyendasHUD();
             sincronizarBotonesPadre();
         });
@@ -1365,8 +1440,12 @@
                 let posicionTop = rect.top;
                 const alturaPantalla = window.innerHeight;
                 const alturaCuadro = sub.offsetHeight;
-                if ((posicionTop + alturaCuadro) > alturaPantalla) {
+
+                if ((posicionTop + alturaCuadro) > alturaPantalla - 15) {
                     posicionTop = alturaPantalla - alturaCuadro - 15;
+                }
+                if (posicionTop < 50) {
+                    posicionTop = 50;
                 }
                 sub.style.top = posicionTop + 'px';
             }
@@ -1378,32 +1457,29 @@
             e.stopPropagation();
             const estabaAbierto = sub.classList.contains('abierto');
 
-            // 1. Cierra cualquier OTRO submenú abierto para que NUNCA se apilen entre sí
+            // 1. Cierra inmediatamente todos los demás submenús flotantes
             document.querySelectorAll('.submenu-flotante').forEach(otroSub => {
-                if (otroSub !== sub) otroSub.classList.remove('abierto');
+                otroSub.classList.remove('abierto');
             });
 
-            // 2. Abre o cierra el actual
-            if (estabaAbierto) {
-                sub.classList.remove('abierto');
-            } else {
+            // 2. Abre el submenú actual solo si estaba cerrado
+            if (!estabaAbierto) {
                 sub.classList.add('abierto');
                 acomodarSubmenu();
             }
 
-            // 3. Mantiene iluminados todos los padres que tengan sub-botones activos
+            // 3. Actualiza el resaltado de los botones padre
             sincronizarBotonesPadre();
         });
     }
 
+    // Cierra cualquier submenú flotante al hacer clic fuera del menú o en un botón simple
     document.addEventListener('click', (e) => {
-        if (!e.target.closest('#hud-lateral-izquierdo') && !e.target.closest('.submenu-flotante')) {
+        if (!e.target.closest('.submenu-flotante') && !e.target.closest('.btn-desplegable')) {
             document.querySelectorAll('.submenu-flotante').forEach(s => s.classList.remove('abierto'));
-            // Al cerrar los cuadros flotantes, NO apagamos los botones padre que tienen sub-capas activas
             sincronizarBotonesPadre();
         }
     });
-});
 
     setTimeout(() => {
         configurarBoton('btn-limite', ['provincia-relleno', 'borde-interprovincial', 'provincia-resaltado']);
@@ -1430,9 +1506,12 @@
         configurarBoton('btn-armada', ['capa-armada']);
         configurarBoton('btn-industrias', ['capa-industrias-relleno', 'capa-industrias-borde', 'capa-industrias-puntos', 'capa-fabricas']);
 
-        vincularSubmenu('btn-fuerza-aerea', 'sub-fuerza-aerea'); vincularSubmenu('btn-rutas', 'sub-rutas');
-        vincularSubmenu('btn-energia', 'sub-energia'); vincularSubmenu('btn-telecom', 'sub-telecom');
-        vincularSubmenu('btn-climas', 'sub-climas'); vincularSubmenu('btn-recursos-mineros', 'sub-recursos-mineros');
+        vincularSubmenu('btn-fuerza-aerea', 'sub-fuerza-aerea');
+        vincularSubmenu('btn-rutas', 'sub-rutas');
+        vincularSubmenu('btn-energia', 'sub-energia');
+        vincularSubmenu('btn-telecom', 'sub-telecom');
+        vincularSubmenu('btn-climas', 'sub-climas');
+        vincularSubmenu('btn-recursos-mineros', 'sub-recursos-mineros');
         vincularSubmenu('btn-desastres', 'sub-desastres');
 
         configurarBoton('btn-sub-bases-aereas', ['capa-fuerza-aerea']);
@@ -1486,24 +1565,36 @@
     function cerrarExplicacion() { document.getElementById('hud-explicacion').classList.remove('visible'); }
 
     barraSuperior.addEventListener('click', async (e) => {
-        const itemClickeado = e.target.closest('.hud-item-clic'); const cajaExplicacion = document.getElementById('hud-explicacion');
+        const itemClickeado = e.target.closest('.hud-item-clic'); 
+        const cajaExplicacion = document.getElementById('hud-explicacion');
+        
         if (itemClickeado) {
             const tipo = itemClickeado.getAttribute('data-tipo');
-            if (cajaExplicacion.classList.contains('visible') && cajaExplicacion.getAttribute('data-actual') === tipo) { cerrarExplicacion(); } 
-            else {
-                cajaExplicacion.innerHTML = `<button class="btn-cerrar" onclick="cerrarExplicacion()">✖</button><div style="margin-top: 10px; color: #00c8ff;">Desencriptando inteligencia...</div>`;
-                cajaExplicacion.setAttribute('data-actual', tipo); cajaExplicacion.classList.add('visible');
+            
+            if (cajaExplicacion.classList.contains('visible') && cajaExplicacion.getAttribute('data-actual') === tipo) { 
+                cerrarExplicacion(); 
+            } else {
+                cajaExplicacion.innerHTML = `<button class="btn-cerrar" onclick="cerrarExplicacion()">✖</button><div style="margin-top: 5px; color: #00c8ff;">Desencriptando inteligencia...</div>`;
+                cajaExplicacion.setAttribute('data-actual', tipo); 
+                cajaExplicacion.classList.add('visible');
+                
                 try {
-                    const res = await fetch(`/api/conocimiento/${tipo}`); const data = await res.json();
-                    cajaExplicacion.innerHTML = `<button class="btn-cerrar" onclick="cerrarExplicacion()">✖</button><div style="margin-top: 10px;">${data.texto}</div>`;
-                } catch (error) { cajaExplicacion.innerHTML = `<button class="btn-cerrar" onclick="cerrarExplicacion()">✖</button><div style="margin-top: 10px; color: red;">Fallo de enlace.</div>`; }
+                    const res = await fetch(`/api/conocimiento/${tipo}`); 
+                    const data = await res.json();
+                    
+                    // Muestra directamente el texto limpio proveniente de la base de datos
+                    cajaExplicacion.innerHTML = `<button class="btn-cerrar" onclick="cerrarExplicacion()">✖</button><div style="margin-top: 5px;">${data.texto}</div>`;
+                } catch (error) { 
+                    cajaExplicacion.innerHTML = `<button class="btn-cerrar" onclick="cerrarExplicacion()">✖</button><div style="margin-top: 5px; color: red;">Fallo de enlace con la base de conocimiento.</div>`; 
+                }
             }
         }
     });
 
-    // LÓGICA FANTASMA CORREGIDA
+    // LÓGICA FANTASMA CORREGIDA (CON RETORNO AUTOMÁTICO AL HUB DE ESCENARIOS)
     map.on('click', (e) => {
         const capasChequeo = [
+            'capa-tai-punto', 'capa-tai-halo', 'capa-wargame-punto', 'capa-wargame-halo',
             'provincia-relleno', 'plataforma-hitbox', 'zee-hitbox', 'mar-hitbox',
             'capa-gen-electrica', 'sadi-hitbox', 'capa-volcanes', 'capa-sismos-zonas',
             'capa-sismos-puntos', 'capa-incendios', 'trenes-hitbox', 'rutas-hitbox',
@@ -1521,11 +1612,22 @@
         const tocados = map.queryRenderedFeatures(e.point, { layers: capasChequeo });
 
         if (tocados.length === 0) {
-            cerrarPanelIntel();
             map.setFilter('provincia-resaltado', ['==', 'nam', '']);
             if (map.getLayer('capa-sinvica-destacado')) map.setFilter('capa-sinvica-destacado', ['==', 'nombre', '']);
             paisesVecinos.forEach(p => map.setFilter(`${p.id}-resaltado`, ['==', 'name', '']));
             document.getElementById('hud-barra-superior').innerHTML = memoriaHTMLArgentina;
+
+            // Si hay un Teatro de Seguridad activo, devuelve su Hub en lugar de cerrar el panel
+            const norteActivo = document.getElementById('btn-escenario-norte')?.classList.contains('activo');
+            const australActivo = document.getElementById('btn-escenario-austral')?.classList.contains('activo');
+
+            if (norteActivo && typeof window.renderizarFaseWargameNorte === 'function') {
+                window.renderizarFaseWargameNorte(window.faseActualNorte || 1, false);
+            } else if (australActivo && typeof window.renderizarFaseWargame === 'function') {
+                window.renderizarFaseWargame(window.faseActualAustral || 1, false);
+            } else {
+                cerrarPanelIntel();
+            }
         }
         cerrarExplicacion();
     });
@@ -1595,6 +1697,8 @@
     });
 
     map.on('click', 'sadi-hitbox', async (e) => {
+        const puntosPrioritarios = ['capa-tai-punto', 'capa-tai-halo', 'capa-wargame-punto', 'capa-wargame-halo', 'capa-gen-electrica', 'capa-fuerza-aerea', 'capa-sinvica-antena', 'capa-aeropuertos'].filter(id => map.getLayer(id));
+        if (map.queryRenderedFeatures(e.point, { layers: puntosPrioritarios }).length > 0) return;
         e.originalEvent.stopPropagation();
         const datos = await obtenerInteligenciaBoveda('energia_alta_tension', e.features[0].properties.FID || e.features[0].properties.id_obj, panel, '#ffd700', 'Línea Troncal');
         if (!datos) return;
@@ -2208,6 +2312,7 @@
     // CLIC EN PROVINCIAS Y CABA (SOLO SE EJECUTA SI NO TOCASTE NINGÚN PUNTO, LÍNEA NI OTRO POLÍGONO ENCIMA)
     map.on('click', 'provincia-relleno', async (e) => {
         const capasSuperiores = [
+            'capa-tai-punto', 'capa-tai-halo', 'capa-wargame-punto', 'capa-wargame-halo',
             'capa-gen-electrica', 'sadi-hitbox', 'tubos-hitbox', 'rutas-hitbox', 'rutas-prov-hitbox',
             'capa-metaliferos', 'capa-industriales', 'capa-cuencas-petroleo-relleno', 'capa-sismos-zonas',
             'capa-sismos-puntos', 'capa-puertos', 'trenes-hitbox', 'capa-industrias-relleno',
@@ -2309,12 +2414,13 @@
     ['plataforma-hitbox', 'zee-hitbox', 'mar-hitbox'].forEach(capa => {
         map.on('click', capa, async (e) => {
             const capasPuntosYLineas = [
-            'capa-gen-electrica', 'sadi-hitbox', 'tubos-hitbox', 'rutas-hitbox', 'rutas-prov-hitbox',
-            'capa-metaliferos', 'capa-industriales', 'capa-sismos-puntos', 'capa-puertos', 'trenes-hitbox',
-            'capa-industrias-puntos', 'capa-fabricas', 'puntos-fuerzas', 'capa-armada', 'capa-fuerza-aerea',
-            'capa-conjunto', 'capa-aeropuertos', 'fibra-hitbox', 'arsat-hitbox', 'capa-presas',
-            'capa-agua-puntos', 'capa-volcanes', 'capa-fronteras', 'capa-antartida',
-             'capa-compresoras', 'capa-barcos', 'capa-peak', 'capa-smn', 'capa-sinvica-antena'
+                'capa-tai-punto', 'capa-tai-halo', 'capa-wargame-punto', 'capa-wargame-halo',
+                'capa-gen-electrica', 'sadi-hitbox', 'tubos-hitbox', 'rutas-hitbox', 'rutas-prov-hitbox',
+                'capa-metaliferos', 'capa-industriales', 'capa-sismos-puntos', 'capa-puertos', 'trenes-hitbox',
+                'capa-industrias-puntos', 'capa-fabricas', 'puntos-fuerzas', 'capa-armada', 'capa-fuerza-aerea',
+                'capa-conjunto', 'capa-aeropuertos', 'fibra-hitbox', 'arsat-hitbox', 'capa-presas',
+                'capa-agua-puntos', 'capa-volcanes', 'capa-fronteras', 'capa-antartida',
+                'capa-compresoras', 'capa-barcos', 'capa-peak', 'capa-smn', 'capa-sinvica-antena'
             ].filter(id => map.getLayer(id));
             if (map.queryRenderedFeatures(e.point, { layers: capasPuntosYLineas }).length > 0) return;
             e.originalEvent.stopPropagation(); 
@@ -2367,7 +2473,8 @@
     });
 
     map.on('click', 'trenes-hitbox', async (e) => {
-        if (typeof hayCapaSuperiorEnPunto === 'function' && hayCapaSuperiorEnPunto(e.point, CAPAS_PRIORIDAD_PUNTOS)) return;
+        const puntosEncima = ['capa-puertos', 'capa-aeropuertos', 'capa-industrias-puntos', 'capa-fabricas', 'capa-gen-electrica', 'capa-metaliferos', 'capa-industriales', 'puntos-fuerzas', 'capa-armada', 'capa-fuerza-aerea'].filter(id => map.getLayer(id));
+        if (map.queryRenderedFeatures(e.point, { layers: puntosEncima }).length > 0) return;
         e.originalEvent.stopPropagation();
         const props = e.features[0].properties;
         const identFerro = props.nam || props.fna || props.ramal || "Ramal Ferroviario";
@@ -2587,6 +2694,16 @@
     });
 
     map.on('click', 'capa-cuencas-relleno', async (e) => {
+        const capasPuntosYLineas = [
+        'capa-tai-punto', 'capa-tai-halo', 'capa-wargame-punto', 'capa-wargame-halo',
+        'capa-gen-electrica', 'sadi-hitbox', 'tubos-hitbox', 'rutas-hitbox', 'rutas-prov-hitbox',
+        'capa-metaliferos', 'capa-industriales', 'capa-sismos-puntos', 'capa-puertos', 'trenes-hitbox',
+        'capa-industrias-puntos', 'capa-fabricas', 'puntos-fuerzas', 'capa-armada', 'capa-fuerza-aerea',
+        'capa-conjunto', 'capa-aeropuertos', 'fibra-hitbox', 'arsat-hitbox', 'capa-presas',
+        'capa-agua-puntos', 'capa-volcanes', 'capa-fronteras', 'capa-antartida',
+        'capa-compresoras', 'capa-barcos', 'capa-peak', 'capa-smn', 'capa-sinvica-antena'
+        ].filter(id => map.getLayer(id));
+        if (map.queryRenderedFeatures(e.point, { layers: capasPuntosYLineas }).length > 0) return;
         e.originalEvent.stopPropagation();
         panel.innerHTML = `<div style="color: #0099ff; text-align: center; margin-top:20px;">Escaneando vector hídrico...</div>`;
         panel.classList.add('visible');
@@ -2628,7 +2745,10 @@
     const tooltip = document.getElementById('hud-tooltip');
 
     map.on('mousemove', (e) => {
-        const todasLasCapas = capasInteractivas.filter(id => map.getLayer(id));
+        const todasLasCapas = [
+            'capa-tai-punto', 'capa-tai-halo', 'capa-wargame-punto', 'capa-wargame-halo',
+            ...capasInteractivas
+        ].filter(id => map.getLayer(id));
         const features = map.queryRenderedFeatures(e.point, { layers: todasLasCapas });
 
         if (!features || features.length === 0) {
@@ -2651,7 +2771,17 @@
         let relevancia = "";
         let colorBorde = "#00c8ff";
 
-        if (capaId === 'capa-sinvica-antena') {
+        if (capaId === 'capa-tai-punto' || capaId === 'capa-tai-halo') {
+            categoria = "ALERTA ROJA | ESCUDO NORTE";
+            nombre = "Tránsito Aéreo Irregular (Código TAI-904)";
+            relevancia = "Clic para abrir el Hub de Comando del Escenario";
+            colorBorde = "#ff2a2a";
+        } else if (capaId === 'capa-wargame-punto' || capaId === 'capa-wargame-halo') {
+            categoria = "ALERTA C4ISR | TEATRO AUSTRAL";
+            nombre = "Contacto: Buque HMS Medway (P223)";
+            relevancia = "Clic para abrir el Hub de Comando del Escenario";
+            colorBorde = "#ffcc00";
+        } else if (capaId === 'capa-sinvica-antena') {
             categoria = "RADAR SINVICA (" + (p.modelo || "INVAP") + ")";
             nombre = p.nombre;
             relevancia = `NIVEL 1 | Alcance: ${p.alcanceMN} MN (${p.alcanceKm} km)`;
@@ -2862,56 +2992,9 @@
 
     map.on('mouseout', () => { tooltip.classList.remove('visible'); });
 
-    // =========================================================================
-    // 1. MANTENER BOTONES PADRE ILUMINADOS SI TIENEN SUB-CAPAS ACTIVAS
-    // =========================================================================
-    const relacionPadreSubmenu = [
-        { botonPadre: 'btn-energia', contenedorSub: 'sub-energia' },
-        { botonPadre: 'btn-rutas', contenedorSub: 'sub-rutas' },
-        { botonPadre: 'btn-fuerza-aerea', contenedorSub: 'sub-fuerza-aerea' },
-        { botonPadre: 'btn-desastres', contenedorSub: 'sub-desastres' }
-    ];
+    
 
-    function sincronizarBotonesPadre() {
-        relacionPadreSubmenu.forEach(rel => {
-            const btnP = document.getElementById(rel.botonPadre);
-            const subDiv = document.getElementById(rel.contenedorSub);
-            if (btnP && subDiv) {
-                const tieneHijoActivo = subDiv.querySelector('.submenu-btn.activo') !== null;
-                const menuAbierto = subDiv.classList.contains('visible');
-                if (tieneHijoActivo || menuAbierto) {
-                    btnP.classList.add('activo');
-                } else {
-                    btnP.classList.remove('activo');
-                }
-            }
-        });
-    }
-
-    // Se engancha automáticamente a cualquier clic en botones del menú o submenú
-    document.querySelectorAll('.menu-btn, .submenu-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            setTimeout(sincronizarBotonesPadre, 50);
-        });
-    });
-
-    // =========================================================================
-    // 2. SISTEMA ANTI-SUPERPOSICIÓN (PROVINCIAS Y MAR NUNCA TAPAN A LOS PUNTOS)
-    // =========================================================================
-    function ordenarEIgnorarSuperposicion(features) {
-        if (!features || features.length === 0) return null;
-        const capasPoligonosFondo = [
-            'capa-provincias-relleno', 'capa-provincias-borde',
-            'zee-hitbox', 'mar-hitbox', 'plataforma-hitbox',
-            'zee-borde', 'mar-borde', 'plataforma-borde',
-            'capa-regiones-cammesa-relleno', 'capa-regiones-sinagir-relleno',
-            'capa-sismos-relleno', 'capa-sinvica-cobertura'
-        ];
-        // Busca primero si tocaste una base, radar, central, puerto, fábrica o ruta puntual
-        const featurePrioritaria = features.find(f => !capasPoligonosFondo.includes(f.layer.id));
-        // Si hay un punto/línea, devuelve ese. Si no, recién ahí devuelve la Provincia o el Mar
-        return featurePrioritaria || features[0];
-    }
+    
 
     // =========================================================================
     // SIMULACIÓN INTERACTIVA CON BOTONES CLICKEABLES + IMÁGENES PALANTIR + SCROLL
@@ -2971,6 +3054,60 @@
         `;
         document.head.appendChild(estiloHubDerecho);
 
+        // =====================================================================
+        // BLINDAJE DE RADARES, JERARQUÍA INDEPENDIENTE Y RETORNO AL HUB
+        // =====================================================================
+        const FILTRO_RADARES_NORTE = ['in', 'nombre', 'Escuadrón VYCA Resistencia', 'Sitio Radar Tostado'];
+        const CAPAS_RADARES_SINVICA = [
+            'capa-sinvica-cobertura', 'capa-sinvica-anillo',
+            'capa-sinvica-destacado', 'capa-sinvica-antena'
+        ];
+
+        // 1. Impide que los anillos circulares de los 2 radares desaparezcan al tocar el mapa o un radar en Escudo Norte
+        const originalSetFilter = map.setFilter.bind(map);
+        map.setFilter = function(layerId, filter, options) {
+            const norteActivo = document.getElementById('btn-escenario-norte')?.classList.contains('activo');
+            if (norteActivo && CAPAS_RADARES_SINVICA.includes(layerId)) {
+                return originalSetFilter(layerId, FILTRO_RADARES_NORTE, options);
+            }
+            return originalSetFilter(layerId, filter, options);
+        };
+
+        // 2. Interceptor en fase de captura: separa 100% Escudo Norte de Teatro Austral y frena clics en capas de fondo
+        map.getCanvas().addEventListener('click', (ev) => {
+            const norteActivo = document.getElementById('btn-escenario-norte')?.classList.contains('activo');
+            const australActivo = document.getElementById('btn-escenario-austral')?.classList.contains('activo');
+            if (!norteActivo && !australActivo) return;
+
+            const rect = map.getCanvas().getBoundingClientRect();
+            const pt = [ev.clientX - rect.left, ev.clientY - rect.top];
+            const bbox = [[pt[0] - 8, pt[1] - 8], [pt[0] + 8, pt[1] + 8]];
+
+            if (norteActivo && map.getLayer('capa-tai-punto')) {
+                const hitsNorte = map.queryRenderedFeatures(bbox, { layers: ['capa-tai-punto', 'capa-tai-halo'] });
+                if (hitsNorte && hitsNorte.length > 0) {
+                    ev.stopImmediatePropagation();
+                    ev.stopPropagation();
+                    originalSetFilter('provincia-resaltado', ['==', 'nam', '']);
+                    document.getElementById('hud-barra-superior').innerHTML = memoriaHTMLArgentina;
+                    window.renderizarFaseWargameNorte(window.faseActualNorte || 1, false);
+                    return;
+                }
+            }
+
+            if (australActivo && map.getLayer('capa-wargame-punto')) {
+                const hitsAustral = map.queryRenderedFeatures(bbox, { layers: ['capa-wargame-punto', 'capa-wargame-halo'] });
+                if (hitsAustral && hitsAustral.length > 0) {
+                    ev.stopImmediatePropagation();
+                    ev.stopPropagation();
+                    originalSetFilter('provincia-resaltado', ['==', 'nam', '']);
+                    document.getElementById('hud-barra-superior').innerHTML = memoriaHTMLArgentina;
+                    window.renderizarFaseWargame(window.faseActualAustral || 1, false);
+                    return;
+                }
+            }
+        }, true);
+
         // Fotos locales desde tu carpeta Img/
         const IMG_RADAR_ATUCHA  = "Img/atucha.jpg";
         const IMG_F16_FAA       = "Img/f16.jpg";
@@ -2992,39 +3129,131 @@
             `;
         }
 
+        // =====================================================================
+        // MEMORIA DE CAPAS + MEMORIA DEL HUB DERECHO Y BARRA SUPERIOR
+        // =====================================================================
+        let memoriaBotonesPrevios = [];
+        let memoriaHubDerecho = null;
+
+        function guardarEstadoPrevioCapas() {
+            const norteActivo = document.getElementById('btn-escenario-norte')?.classList.contains('activo');
+            const australActivo = document.getElementById('btn-escenario-austral')?.classList.contains('activo');
+
+            // Solo guarda la foto si el usuario viene del modo libre (no al saltar de un teatro a otro)
+            if (!norteActivo && !australActivo) {
+                memoriaBotonesPrevios = Object.keys(REGISTRO_CAPAS_BOTONES).filter(idBoton => {
+                    const el = document.getElementById(idBoton);
+                    return el && el.classList.contains('activo');
+                });
+
+                const panelEl = document.getElementById('panel-derecho');
+                const barraEl = document.getElementById('hud-barra-superior');
+
+                memoriaHubDerecho = {
+                    visible: panelEl ? panelEl.classList.contains('visible') : false,
+                    html: panelEl ? panelEl.innerHTML : '',
+                    scrollTop: panelEl ? panelEl.scrollTop : 0,
+                    barraHTML: barraEl ? barraEl.innerHTML : memoriaHTMLArgentina,
+                    filtroProvincia: map.getLayer('provincia-resaltado') ? map.getFilter('provincia-resaltado') : ['==', 'nam', ''],
+                    filtroRadar: map.getLayer('capa-sinvica-destacado') ? map.getFilter('capa-sinvica-destacado') : ['==', 'nombre', ''],
+                    filtrosPaises: paisesVecinos.map(p => ({
+                        id: `${p.id}-resaltado`,
+                        filtro: map.getLayer(`${p.id}-resaltado`) ? map.getFilter(`${p.id}-resaltado`) : ['==', 'name', '']
+                    }))
+                };
+            }
+        }
+
         function apagarTodasLasCapasMapa() {
-            const todas = [
-                'capa-provincias-relleno', 'capa-provincias-borde', 'zee-borde', 'mar-borde', 'plataforma-borde',
-                'zee-hitbox', 'mar-hitbox', 'plataforma-hitbox', 'capa-minerales', 'capa-yacimientos-relleno',
-                'capa-yacimientos-borde', 'capa-industrias-relleno', 'capa-industrias-borde', 'capa-industrias-puntos',
-                'capa-fabricas', 'capa-gen-electrica', 'capa-alta-tension', 'capa-presas', 'capa-gasoductos',
-                'capa-regiones-cammesa-relleno', 'capa-regiones-cammesa-borde', 'capa-rutas-nacionales',
-                'capa-ferrocarriles', 'capa-puentes', 'capa-pasos-fronterizos', 'capa-aeropuertos', 'capa-puertos',
-                'capa-ejercito', 'capa-armada', 'capa-fuerza-aerea', 'capa-sinvica-cobertura', 'capa-sinvica-anillo',
-                'capa-sinvica-destacado', 'capa-sinvica-antena', 'capa-antartida', 'capa-fibra-optica',
-                'capa-radares-meteo', 'capa-estaciones-smn', 'capa-sismos-relleno', 'capa-sismos-borde',
-                'capa-volcanes', 'capa-incendios', 'capa-regiones-sinagir-relleno', 'capa-regiones-sinagir-borde'
-            ];
-            todas.forEach(id => {
+            Object.entries(REGISTRO_CAPAS_BOTONES).forEach(([idBoton, idsCapas]) => {
+                const btn = document.getElementById(idBoton);
+                if (btn) btn.classList.remove('activo');
+                idsCapas.forEach(idCapa => {
+                    if (map.getLayer(idCapa)) {
+                        try { map.setLayoutProperty(idCapa, 'visibility', 'none'); } catch (e) {}
+                    }
+                });
+            });
+
+            ['capa-tai-amenaza', 'capa-tai-scramble', 'capa-tai-escolta', 'capa-tai-halo', 'capa-tai-punto',
+             'capa-wargame-halo', 'capa-wargame-punto', 'capa-wargame-escape'].forEach(id => {
                 if (map.getLayer(id)) {
                     try { map.setLayoutProperty(id, 'visibility', 'none'); } catch (e) {}
                 }
             });
-            document.querySelectorAll('.menu-btn.activo, .submenu-btn.activo').forEach(b => {
-                if (b.id !== 'btn-escenario-norte' && b.id !== 'btn-escenario-austral') b.classList.remove('activo');
-            });
+
+            document.querySelectorAll('.submenu-flotante').forEach(s => s.classList.remove('abierto'));
+            if (typeof sincronizarBotonesPadre === 'function') sincronizarBotonesPadre();
         }
 
         function restaurarFiltrosModoLibre() {
             ['capa-sinvica-cobertura', 'capa-sinvica-anillo', 'capa-sinvica-antena',
-             'capa-gen-electrica', 'capa-fuerza-aerea', 'capa-aeropuertos'].forEach(id => {
+             'capa-gen-electrica', 'capa-aeropuertos'].forEach(id => {
                 if (map.getLayer(id)) {
-                    try { map.setFilter(id, null); } catch (e) {}
+                    try { originalSetFilter(id, null); } catch (e) {}
                 }
             });
-            if (map.getLayer('capa-sinvica-destacado')) {
-                try { map.setFilter('capa-sinvica-destacado', ['==', 'nombre', '']); } catch (e) {}
+            if (map.getLayer('capa-fuerza-aerea')) {
+                try { originalSetFilter('capa-fuerza-aerea', ['==', ['get', 'fuerza'], 'Fuerza Aérea']); } catch (e) {}
             }
+            if (map.getLayer('capa-sinvica-destacado')) {
+                try { originalSetFilter('capa-sinvica-destacado', ['==', 'nombre', '']); } catch (e) {}
+            }
+        }
+
+        function restaurarCapasPreviasUsuario() {
+            memoriaBotonesPrevios.forEach(idBoton => {
+                const btn = document.getElementById(idBoton);
+                const idsCapas = REGISTRO_CAPAS_BOTONES[idBoton];
+                if (btn && idsCapas) {
+                    btn.classList.add('activo');
+                    idsCapas.forEach(idCapa => {
+                        if (map.getLayer(idCapa)) {
+                            try { map.setLayoutProperty(idCapa, 'visibility', 'visible'); } catch (e) {}
+                        }
+                    });
+                }
+            });
+            memoriaBotonesPrevios = [];
+
+            // Restaura el Hub Derecho, la Barra Superior y los resaltados previos si existían
+            if (memoriaHubDerecho) {
+                const panelEl = document.getElementById('panel-derecho');
+                const barraEl = document.getElementById('hud-barra-superior');
+
+                if (barraEl && memoriaHubDerecho.barraHTML) {
+                    barraEl.innerHTML = memoriaHubDerecho.barraHTML;
+                }
+                if (map.getLayer('provincia-resaltado') && memoriaHubDerecho.filtroProvincia) {
+                    try { originalSetFilter('provincia-resaltado', memoriaHubDerecho.filtroProvincia); } catch (e) {}
+                }
+                if (map.getLayer('capa-sinvica-destacado') && memoriaHubDerecho.filtroRadar) {
+                    try { originalSetFilter('capa-sinvica-destacado', memoriaHubDerecho.filtroRadar); } catch (e) {}
+                }
+                if (Array.isArray(memoriaHubDerecho.filtrosPaises)) {
+                    memoriaHubDerecho.filtrosPaises.forEach(fp => {
+                        if (map.getLayer(fp.id) && fp.filtro) {
+                            try { originalSetFilter(fp.id, fp.filtro); } catch (e) {}
+                        }
+                    });
+                }
+
+                if (panelEl) {
+                    if (memoriaHubDerecho.visible && memoriaHubDerecho.html) {
+                        panelEl.innerHTML = memoriaHubDerecho.html;
+                        panelEl.classList.add('visible');
+                        panelEl.scrollTop = memoriaHubDerecho.scrollTop || 0;
+                    } else {
+                        panelEl.classList.remove('visible');
+                    }
+                }
+                memoriaHubDerecho = null;
+            } else {
+                cerrarPanelIntel();
+            }
+
+            if (typeof actualizarLeyendasHUD === 'function') actualizarLeyendasHUD();
+            if (typeof sincronizarBotonesPadre === 'function') sincronizarBotonesPadre();
         }
 
         function activarCapasEscenario(idsCapas, idsBotones) {
@@ -3041,22 +3270,17 @@
             if (typeof sincronizarBotonesPadre === 'function') sincronizarBotonesPadre();
         }
 
-        // Busca los puntos cuando la capa YA está visible para que nunca desaparezcan por estar apagada la fuente
         function aplicarFiltroInteligente(layerId, sourceId, palabraClave) {
             if (!map.getLayer(layerId)) return;
-            try {
-                map.setLayoutProperty(layerId, 'visibility', 'visible');
-                const feats = map.querySourceFeatures(sourceId);
-                const nombresCoincidentes = feats
-                    .map(f => f.properties && f.properties.nombre)
-                    .filter(n => n && n.toLowerCase().includes(palabraClave.toLowerCase()));
-                if (nombresCoincidentes.length > 0) {
-                    map.setFilter(layerId, ['in', 'nombre', ...new Set(nombresCoincidentes)]);
-                } else {
-                    map.setFilter(layerId, null);
-                }
-            } catch (e) {
-                map.setFilter(layerId, null);
+            map.setLayoutProperty(layerId, 'visibility', 'visible');
+            
+            const textoBusqueda = ['downcase', ['to-string', ['coalesce', ['get', 'nombre_clave'], ['get', 'Nombre'], ['get', 'nombre'], ['get', 'fna'], ['get', 'nam'], '']]];
+            const condicionNombre = ['!=', ['index-of', palabraClave.toLowerCase(), textoBusqueda], -1];
+
+            if (layerId === 'capa-fuerza-aerea') {
+                originalSetFilter(layerId, ['all', ['==', ['get', 'fuerza'], 'Fuerza Aérea'], condicionNombre]);
+            } else {
+                originalSetFilter(layerId, condicionNombre);
             }
         }
 
@@ -3143,15 +3367,13 @@
                 'paint': { 'circle-radius': 9, 'circle-color': '#ff2a2a', 'circle-stroke-width': 2.5, 'circle-stroke-color': '#ffffff' }
             });
 
-            map.on('mouseenter', 'capa-tai-punto', () => { map.getCanvas().style.cursor = 'crosshair'; });
-            map.on('mouseleave', 'capa-tai-punto', () => { map.getCanvas().style.cursor = ''; });
-            map.on('click', 'capa-tai-punto', (e) => {
-                e.originalEvent.stopPropagation();
-                window.renderizarFaseWargameNorte(1);
-            });
+            map.on('mouseenter', ['capa-tai-punto', 'capa-tai-halo'], () => { map.getCanvas().style.cursor = 'crosshair'; });
+            map.on('mouseleave', ['capa-tai-punto', 'capa-tai-halo'], () => { map.getCanvas().style.cursor = ''; });
         }
 
         function asegurarVisibilidadPuntosNorte(incluirAeropuerto) {
+            if (!document.getElementById('btn-escenario-norte')?.classList.contains('activo')) return;
+
             ['provincia-relleno', 'borde-interprovincial', 'provincia-resaltado',
              'capa-sinvica-cobertura', 'capa-sinvica-anillo', 'capa-sinvica-destacado', 'capa-sinvica-antena',
              'capa-alta-tension', 'sadi-hitbox', 'capa-gen-electrica', 'capa-fuerza-aerea',
@@ -3160,12 +3382,23 @@
                     try { map.setLayoutProperty(id, 'visibility', 'visible'); } catch (e) {}
                 }
             });
+
+            CAPAS_RADARES_SINVICA.forEach(id => {
+                if (map.getLayer(id)) {
+                    try { originalSetFilter(id, FILTRO_RADARES_NORTE); } catch (e) {}
+                }
+            });
+
             if (map.getLayer('capa-aeropuertos')) {
                 map.setLayoutProperty('capa-aeropuertos', 'visibility', incluirAeropuerto ? 'visible' : 'none');
             }
         }
 
-        window.renderizarFaseWargameNorte = function(fase) {
+        window.faseActualNorte = 1;
+        window.renderizarFaseWargameNorte = function(fase, moverCamara = true) {
+            if (!document.getElementById('btn-escenario-norte')?.classList.contains('activo')) return;
+
+            window.faseActualNorte = fase;
             const panel = document.getElementById('panel-derecho');
             panel.classList.add('visible');
             panel.scrollTop = 0;
@@ -3247,7 +3480,9 @@
                     map.setPaintProperty('capa-tai-punto', 'circle-color', '#ffaa00');
                     map.setPaintProperty('capa-tai-halo', 'circle-color', '#00e5ff');
                 }
-                map.flyTo({ center: [-61.8, -32.4], zoom: 5.7, pitch: 44, speed: 0.9 });
+                if (moverCamara) {
+                    map.flyTo({ center: [-61.8, -32.4], zoom: 5.7, pitch: 44, speed: 0.9 });
+                }
 
                 panel.innerHTML = `
                     <button class="btn-cerrar" onclick="cerrarPanelIntel()">✖</button>
@@ -3290,13 +3525,15 @@
                     map.setPaintProperty('capa-tai-halo', 'circle-color', '#00ff88');
                 }
                 if (map.getLayer('capa-aeropuertos')) {
-                    aplicarFiltroInteligente('capa-aeropuertos', 'aeropuertos', 'Sauce Viejo');
+                    aplicarFiltroInteligente('capa-aeropuertos', 'ign-aeropuertos', 'Sauce Viejo');
                     const bAero = document.getElementById('btn-sub-aeropuertos');
                     if (bAero) bAero.classList.add('activo');
                     if (typeof sincronizarBotonesPadre === 'function') sincronizarBotonesPadre();
                 }
 
-                map.flyTo({ center: COORDS_AERO_SANTA_FE, zoom: 6.3, pitch: 40, speed: 0.9 });
+                if (moverCamara) {
+                    map.flyTo({ center: COORDS_AERO_SANTA_FE, zoom: 6.3, pitch: 40, speed: 0.9 });
+                }
 
                 panel.innerHTML = `
                     <button class="btn-cerrar" onclick="cerrarPanelIntel()">✖</button>
@@ -3326,78 +3563,9 @@
             }
         };
 
-        const btnNorteEl = document.getElementById('btn-escenario-norte');
-        if (btnNorteEl) {
-            btnNorteEl.addEventListener('click', () => {
-                inicializarCapasWargameNorte();
-                const estabaActivo = btnNorteEl.classList.contains('activo');
-                apagarTodasLasCapasMapa();
-                restaurarFiltrosModoLibre();
-
-                const btnAus = document.getElementById('btn-escenario-austral');
-                if (btnAus) btnAus.classList.remove('activo');
-
-                if (!estabaActivo) {
-                    btnNorteEl.classList.add('activo');
-                    document.body.classList.add('modo-wargame-activo');
-                    document.querySelectorAll('.submenu-flotante').forEach(s => s.classList.remove('abierto'));
-
-                    // 1. Enciende Provincias + Capas del Escudo Norte
-                    activarCapasEscenario(
-                        [
-                            'provincia-relleno', 'borde-interprovincial', 'provincia-resaltado',
-                            'capa-sinvica-cobertura', 'capa-sinvica-anillo', 'capa-sinvica-destacado', 'capa-sinvica-antena',
-                            'capa-alta-tension', 'sadi-hitbox', 'capa-gen-electrica', 'capa-fuerza-aerea',
-                            'capa-tai-amenaza', 'capa-tai-halo', 'capa-tai-punto'
-                        ],
-                        ['btn-limite', 'btn-sub-radares', 'btn-sub-gen-electrica', 'btn-sub-alta-tension', 'btn-sub-bases-aereas']
-                    );
-
-                    // 2. Filtra solo los 2 radares (Resistencia y Tostado)
-                    const filtro2Radares = ['in', 'nombre', 'Escuadrón VYCA Resistencia', 'Sitio Radar Tostado'];
-                    ['capa-sinvica-cobertura', 'capa-sinvica-anillo', 'capa-sinvica-destacado', 'capa-sinvica-antena'].forEach(id => {
-                        if (map.getLayer(id)) {
-                            try { map.setFilter(id, filtro2Radares); } catch (e) {}
-                        }
-                    });
-
-                    // 3. Filtra Atucha y Río Cuarto
-                    if (typeof filtrarNodosEscenario === 'function') {
-                        filtrarNodosEscenario('capa-gen-electrica', 'Atucha', false);
-                        filtrarNodosEscenario('capa-fuerza-aerea', 'Cuarto', true);
-                    } else if (typeof aplicarFiltroInteligente === 'function') {
-                        aplicarFiltroInteligente('capa-gen-electrica', 'sadi-generacion', 'Atucha');
-                        aplicarFiltroInteligente('capa-fuerza-aerea', 'fuerzas-armadas', 'Cuarto');
-                    }
-
-                    map.flyTo({ center: [-60.5, -32.3], zoom: 6.2, pitch: 45, speed: 0.85 });
-                    window.renderizarFaseWargameNorte(1);
-                } else {
-                    // APAGADO LIMPIO (Elimina fantasmas del mapa y apaga los botones iluminados)
-                    btnNorteEl.classList.remove('activo');
-                    document.body.classList.remove('modo-wargame-activo');
-                    restaurarFiltrosModoLibre();
-                    
-                    // Apaga los botones que encendió el escenario
-                    ['btn-limite', 'btn-sub-radares', 'btn-sub-gen-electrica', 'btn-sub-alta-tension', 'btn-sub-bases-aereas'].forEach(id => {
-                        const b = document.getElementById(id);
-                        if (b) b.classList.remove('activo');
-                    });
-
-                    ['provincia-relleno', 'borde-interprovincial', 'provincia-resaltado', 
-                     'capa-tai-amenaza', 'capa-tai-scramble', 'capa-tai-escolta', 'capa-tai-halo', 'capa-tai-punto',
-                     'capa-sinvica-cobertura', 'capa-sinvica-anillo', 'capa-sinvica-destacado', 'capa-sinvica-antena',
-                     'capa-alta-tension', 'sadi-hitbox', 'capa-gen-electrica', 'capa-fuerza-aerea'].forEach(id => {
-                        if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', 'none');
-                    });
-                    cerrarPanelIntel();
-                    if (typeof actualizarLeyendasHUD === 'function') actualizarLeyendasHUD();
-                    if (typeof sincronizarBotonesPadre === 'function') sincronizarBotonesPadre();
-                    map.flyTo({ center: [-63.6167, -38.4161], zoom: 3.3, pitch: 20, speed: 1 });
-                }
-            });
-        }
-        // Ubicado más al norte y cerca del continente (ZEE Continental frente a Patagonia Central, fuera del área de facto de Malvinas)
+        // -------------------------------------------------------------------------
+        // 2. SIMULACIÓN TEATRO AUSTRAL (OPCIONES CLICKEABLES + FOTOS + ZEE)
+        // -------------------------------------------------------------------------
         const COORDS_INCIDENTE_MEDWAY = [-61.85, -46.80];
 
         function inicializarCapasWargameAustral() {
@@ -3443,15 +3611,15 @@
                 'paint': { 'circle-radius': 9, 'circle-color': '#ffcc00', 'circle-stroke-width': 2.5, 'circle-stroke-color': '#000000' }
             });
 
-            map.on('mouseenter', 'capa-wargame-punto', () => { map.getCanvas().style.cursor = 'crosshair'; });
-            map.on('mouseleave', 'capa-wargame-punto', () => { map.getCanvas().style.cursor = ''; });
-            map.on('click', 'capa-wargame-punto', (e) => {
-                e.originalEvent.stopPropagation();
-                window.renderizarFaseWargame(1);
-            });
+            map.on('mouseenter', ['capa-wargame-punto', 'capa-wargame-halo'], () => { map.getCanvas().style.cursor = 'crosshair'; });
+            map.on('mouseleave', ['capa-wargame-punto', 'capa-wargame-halo'], () => { map.getCanvas().style.cursor = ''; });
         }
 
-        window.renderizarFaseWargame = function(fase) {
+        window.faseActualAustral = 1;
+        window.renderizarFaseWargame = function(fase, moverCamara = true) {
+            if (!document.getElementById('btn-escenario-austral')?.classList.contains('activo')) return;
+
+            window.faseActualAustral = fase;
             const panel = document.getElementById('panel-derecho');
             panel.classList.add('visible');
             panel.scrollTop = 0;
@@ -3568,22 +3736,69 @@
             }
         };
 
+        const btnNorteEl = document.getElementById('btn-escenario-norte');
         const btnAustralEl = document.getElementById('btn-escenario-austral');
+
+        if (btnNorteEl) {
+            btnNorteEl.addEventListener('click', () => {
+                inicializarCapasWargameNorte();
+                const estabaActivo = btnNorteEl.classList.contains('activo');
+
+                if (!estabaActivo) {
+                    guardarEstadoPrevioCapas();
+                    if (btnAustralEl) btnAustralEl.classList.remove('activo');
+                    apagarTodasLasCapasMapa();
+                    restaurarFiltrosModoLibre();
+
+                    btnNorteEl.classList.add('activo');
+                    document.body.classList.add('modo-wargame-activo');
+
+                    activarCapasEscenario(
+                        [
+                            'provincia-relleno', 'borde-interprovincial', 'provincia-resaltado',
+                            'capa-sinvica-cobertura', 'capa-sinvica-anillo', 'capa-sinvica-destacado', 'capa-sinvica-antena',
+                            'capa-alta-tension', 'sadi-hitbox', 'capa-gen-electrica', 'capa-fuerza-aerea',
+                            'capa-tai-amenaza', 'capa-tai-halo', 'capa-tai-punto'
+                        ],
+                        ['btn-limite', 'btn-sub-radares', 'btn-sub-gen-electrica', 'btn-sub-alta-tension', 'btn-sub-bases-aereas']
+                    );
+
+                    CAPAS_RADARES_SINVICA.forEach(id => {
+                        if (map.getLayer(id)) {
+                            try { originalSetFilter(id, FILTRO_RADARES_NORTE); } catch (e) {}
+                        }
+                    });
+
+                    aplicarFiltroInteligente('capa-gen-electrica', 'sadi-generacion', 'Atucha');
+                    aplicarFiltroInteligente('capa-fuerza-aerea', 'fuerzas-armadas', 'Cuarto');
+
+                    map.flyTo({ center: [-60.5, -32.3], zoom: 6.2, pitch: 45, speed: 0.85 });
+                    window.renderizarFaseWargameNorte(1, true);
+                } else {
+                    btnNorteEl.classList.remove('activo');
+                    document.body.classList.remove('modo-wargame-activo');
+                    apagarTodasLasCapasMapa();
+                    restaurarFiltrosModoLibre();
+                    restaurarCapasPreviasUsuario();
+                    map.flyTo({ center: [-63.6167, -38.4161], zoom: 3.3, pitch: 20, speed: 1 });
+                }
+            });
+        }
+
         if (btnAustralEl) {
             btnAustralEl.addEventListener('click', () => {
                 inicializarCapasWargameAustral();
                 const estabaActivo = btnAustralEl.classList.contains('activo');
-                apagarTodasLasCapasMapa();
-                restaurarFiltrosModoLibre();
-
-                if (btnNorteEl) btnNorteEl.classList.remove('activo');
 
                 if (!estabaActivo) {
+                    guardarEstadoPrevioCapas();
+                    if (btnNorteEl) btnNorteEl.classList.remove('activo');
+                    apagarTodasLasCapasMapa();
+                    restaurarFiltrosModoLibre();
+
                     btnAustralEl.classList.add('activo');
                     document.body.classList.add('modo-wargame-activo');
-                    document.querySelectorAll('.submenu-flotante').forEach(s => s.classList.remove('abierto'));
 
-                    // Enciende Provincias + ZEE + Contacto HMS Medway
                     activarCapasEscenario(
                         [
                             'provincia-relleno', 'borde-interprovincial', 'provincia-resaltado',
@@ -3594,27 +3809,13 @@
                     );
 
                     map.flyTo({ center: [-60.50, -46.80], zoom: 5.8, pitch: 45, speed: 0.85 });
-                    window.renderizarFaseWargame(1);
+                    window.renderizarFaseWargame(1, true);
                 } else {
-                    // APAGADO LIMPIO (Elimina fantasmas del mapa y apaga los botones iluminados)
                     btnAustralEl.classList.remove('activo');
                     document.body.classList.remove('modo-wargame-activo');
+                    apagarTodasLasCapasMapa();
                     restaurarFiltrosModoLibre();
-
-                    // Apaga los botones que encendió el escenario
-                    ['btn-limite', 'btn-zee'].forEach(id => {
-                        const b = document.getElementById(id);
-                        if (b) b.classList.remove('activo');
-                    });
-
-                    ['provincia-relleno', 'borde-interprovincial', 'provincia-resaltado',
-                     'zee-borde', 'mar-borde', 'plataforma-borde', 'zee-hitbox', 'mar-hitbox', 'plataforma-hitbox',
-                     'capa-wargame-halo', 'capa-wargame-punto', 'capa-wargame-escape'].forEach(id => {
-                        if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', 'none');
-                    });
-                    cerrarPanelIntel();
-                    if (typeof actualizarLeyendasHUD === 'function') actualizarLeyendasHUD();
-                    if (typeof sincronizarBotonesPadre === 'function') sincronizarBotonesPadre();
+                    restaurarCapasPreviasUsuario();
                     map.flyTo({ center: [-63.6167, -38.4161], zoom: 3.3, pitch: 20, speed: 1 });
                 }
             });
