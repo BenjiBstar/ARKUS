@@ -552,7 +552,10 @@
             contenidoHTML += `<div class="leyenda-grupo"><span class="leyenda-titulo">Matriz Industrial:</span><div><span class="simbolo-punto" style="background:#ffd700; border-color:#ff2a2a;"></span> Planta Estratégica (Nivel 1)</div><div><span class="simbolo-punto" style="background:#00c8ff;"></span> Polo / Parque Industrial</div><div><span class="simbolo-punto" style="background:#cccccc;"></span> Establecimiento (Nivel 2)</div></div>`;
         }
         if (document.getElementById('btn-sub-metaliferos') && document.getElementById('btn-sub-metaliferos').classList.contains('activo')) {
-            contenidoHTML += `<div class="leyenda-grupo"><span class="leyenda-titulo">Minería Crítica:</span><div><span class="simbolo-punto" style="background:#ffd700; border-color:#ff2a2a;"></span> Megayacimiento / Litio (Nivel 1)</div><div><span class="simbolo-punto" style="background:#ffaa00;"></span> Depósito (Nivel 2)</div></div>`;
+            contenidoHTML += `<div class="leyenda-grupo"><span class="leyenda-titulo">Minería Metalífera:</span><div><span class="simbolo-punto" style="background:#ffd700; border-color:#ff2a2a;"></span> Megayacimiento / Litio (Nivel 1)</div><div><span class="simbolo-punto" style="background:#ffaa00;"></span> Depósito Metalífero (Nivel 2)</div></div>`;
+        }
+        if (document.getElementById('btn-sub-industriales') && document.getElementById('btn-sub-industriales').classList.contains('activo')) {
+            contenidoHTML += `<div class="leyenda-grupo"><span class="leyenda-titulo">Minerales Industriales:</span><div><span class="simbolo-punto" style="background:#ffd700; border-color:#ff2a2a;"></span> Yacimiento Estratégico (Nivel 1)</div><div><span class="simbolo-punto" style="background:#aaaaaa; border-color:#ffffff;"></span> Cantera / Depósito (Nivel 2)</div></div>`;
         }
         if (document.getElementById('btn-sub-fibra') && document.getElementById('btn-sub-fibra').classList.contains('activo')) {
             contenidoHTML += `<div class="leyenda-grupo"><span class="leyenda-titulo">Telecomunicaciones:</span><div><span class="simbolo-linea" style="background:#00ffff; box-shadow: 0 0 5px #0088ff;"></span> Fibra Óptica Nivel 1</div></div>`;
@@ -595,7 +598,7 @@
         }
     }
 
-    mapboxgl.accessToken = 'TU_TOKEN_AQUI';
+    mapboxgl.accessToken = 'pk.eyJ1IjoiamVyZWJ1cmdvczIzIiwiYSI6ImNtdTNsNzE1YTA5cmsyd3B0aXhwZDVzeWYifQ.cSvSngCCXQ48BZ1k3jDVPg';
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/jereburgos23/cmu60vrs0003a01s7bot29ztd', 
@@ -725,14 +728,37 @@
         });
 
         map.addSource('ign-industriales', { type: 'geojson', data: 'Datos/industriales_light.geojson' });
-        let nomIndMin = ['to-string', ['coalesce', ['get', 'nombre_clave'], ['get', 'nombre'], '']];
-        let tamIndMin = ['to-string', ['coalesce', ['get', 'tamaño'], ['get', 'tamano'], '']];
+        let nomIndMin = ['downcase', ['concat',
+            ['to-string', ['coalesce', ['get', 'nombre_clave'], '']], ' ',
+            ['to-string', ['coalesce', ['get', 'nombre'], '']], ' ',
+            ['to-string', ['coalesce', ['get', 'mina'], '']], ' ',
+            ['to-string', ['coalesce', ['get', 'commodity'], '']], ' ',
+            ['to-string', ['coalesce', ['get', 'mineral'], '']]
+        ]];
+        let tamIndMin = ['downcase', ['concat',
+            ['to-string', ['coalesce', ['get', 'tamaño'], '']], ' ',
+            ['to-string', ['coalesce', ['get', 'tamano'], '']], ' ',
+            ['to-string', ['coalesce', ['get', 'nivel_prioridad'], '']]
+        ]];
+        
+        // Solo Nivel 1 real (Tamaño Grande, Nivel 1 explícito o Salares/Yacimientos Estratégicos)
         let esIndMinNivel1 = [
             'any',
-            ['!=', ['index-of', 'Grande', tamIndMin], -1],
-            ['!=', ['index-of', 'Potasio', nomIndMin], -1],
-            ['!=', ['index-of', 'Río Colorado', nomIndMin], -1],
-            ['!=', ['index-of', 'Tincalayu', nomIndMin], -1]
+            ['!=', ['index-of', 'grande', tamIndMin], -1],
+            ['!=', ['index-of', 'nivel 1', tamIndMin], -1],
+            ['!=', ['index-of', 'potasio', nomIndMin], -1],
+            ['!=', ['index-of', 'tincalayu', nomIndMin], -1],
+            ['!=', ['index-of', 'sijes', nomIndMin], -1],
+            ['!=', ['index-of', 'hombre muerto', nomIndMin], -1],
+            ['!=', ['index-of', 'olaroz', nomIndMin], -1],
+            ['!=', ['index-of', 'cauchari', nomIndMin], -1],
+            ['!=', ['index-of', 'rincon', nomIndMin], -1],
+            ['!=', ['index-of', 'rincón', nomIndMin], -1],
+            ['!=', ['index-of', 'arizaro', nomIndMin], -1],
+            ['!=', ['index-of', 'pocitos', nomIndMin], -1],
+            ['!=', ['index-of', 'salinas grandes', nomIndMin], -1],
+            ['!=', ['index-of', 'loma negra', nomIndMin], -1],
+            ['!=', ['index-of', 'litio', nomIndMin], -1]
         ];
         map.addLayer({ 
             'id': 'capa-industriales', 
@@ -740,17 +766,12 @@
             'source': 'ign-industriales', 
             'layout': { 'visibility': 'none' }, 
             'paint': { 
-                'circle-radius': ['case', esIndMinNivel1, 9, 4.5], 
+                'circle-radius': ['case', esIndMinNivel1, 9, 5], 
                 'circle-color': ['case', esIndMinNivel1, '#ffd700', '#aaaaaa'], 
                 'circle-stroke-width': ['case', esIndMinNivel1, 2, 1], 
-                'circle-stroke-color': '#ffffff' 
+                'circle-stroke-color': ['case', esIndMinNivel1, '#ff2a2a', '#ffffff'] 
             }
         });
-
-        map.addSource('ign-cuencas-petroleo', { type: 'geojson', data: 'Datos/cuencas_sedimentarias.geojson' });
-        map.addLayer({ 'id': 'capa-cuencas-petroleo-relleno', 'type': 'fill', 'source': 'ign-cuencas-petroleo', 'layout': { 'visibility': 'none' }, 'paint': { 'fill-color': '#a3cc8e', 'fill-opacity': 0.45 }});
-        map.addLayer({ 'id': 'capa-cuencas-petroleo-borde', 'type': 'line', 'source': 'ign-cuencas-petroleo', 'layout': { 'visibility': 'none' }, 'paint': { 'line-color': '#2b3626', 'line-width': 1.5, 'line-dasharray': [4, 4] }});
-
         // ==========================================
         // RED FERROVIARIA ESTRATÉGICA (LOCs)
         // ==========================================
@@ -933,23 +954,64 @@
         map.addSource('ign-industrias', { type: 'geojson', data: 'Datos/areas_productivas_light.geojson' });
         map.addSource('ign-industrias-puntos', { type: 'geojson', data: 'Datos/puntos_industrias_light.geojson' });
         
-        let nomAreaInd = ['to-string', ['coalesce', ['get', 'nombre_clave'], ['get', 'fna'], ['get', 'nam'], ['get', 'nombre'], '']];
-        let esAreaNivel1 = [
+        let nomAreaInd = ['downcase', ['concat',
+            ['to-string', ['coalesce', ['get', 'nombre_clave'], '']], ' ',
+            ['to-string', ['coalesce', ['get', 'fna'], '']], ' ',
+            ['to-string', ['coalesce', ['get', 'nam'], '']], ' ',
+            ['to-string', ['coalesce', ['get', 'nombre'], '']], ' ',
+            ['to-string', ['coalesce', ['get', 'tipo'], '']], ' ',
+            ['to-string', ['coalesce', ['get', 'gna'], '']], ' ',
+            ['to-string', ['coalesce', ['get', 'objeto'], '']]
+        ]];
+
+        // 1. Identifica TODOS los Parques, Polos, Áreas y Sectores Industriales (Color Celeste #00c8ff)
+        let esPoloOParqueIndustrial = [
             'any',
-            ['!=', ['index-of', 'Plaza Huincul', nomAreaInd], -1],
-            ['!=', ['index-of', 'Bahía Blanca', nomAreaInd], -1],
-            ['!=', ['index-of', 'Comirsa', nomAreaInd], -1],
-            ['!=', ['index-of', 'Campana', nomAreaInd], -1],
-            ['!=', ['index-of', 'Pilar', nomAreaInd], -1],
-            ['!=', ['index-of', 'Río Grande', nomAreaInd], -1],
-            ['!=', ['index-of', 'La Plata', nomAreaInd], -1],
-            ['!=', ['index-of', 'Ledesma', nomAreaInd], -1],
-            ['!=', ['index-of', 'Zapla', nomAreaInd], -1],
-            ['!=', ['index-of', 'Aluminio', nomAreaInd], -1],
-            ['!=', ['index-of', 'YPF', nomAreaInd], -1],
-            ['!=', ['index-of', 'Y.P.F.', nomAreaInd], -1],
-            ['!=', ['index-of', 'Oldelval', nomAreaInd], -1],
-            ['!=', ['index-of', 'Trasandino', nomAreaInd], -1]
+            ['!=', ['index-of', 'parque industrial', nomAreaInd], -1],
+            ['!=', ['index-of', 'parque tecnológico', nomAreaInd], -1],
+            ['!=', ['index-of', 'parque tecnologico', nomAreaInd], -1],
+            ['!=', ['index-of', 'parque petroquímico', nomAreaInd], -1],
+            ['!=', ['index-of', 'parque petroquimico', nomAreaInd], -1],
+            ['!=', ['index-of', 'polo industrial', nomAreaInd], -1],
+            ['!=', ['index-of', 'polo tecnológico', nomAreaInd], -1],
+            ['!=', ['index-of', 'polo tecnologico', nomAreaInd], -1],
+            ['!=', ['index-of', 'polo petroquímico', nomAreaInd], -1],
+            ['!=', ['index-of', 'polo petroquimico', nomAreaInd], -1],
+            ['!=', ['index-of', 'área industrial', nomAreaInd], -1],
+            ['!=', ['index-of', 'area industrial', nomAreaInd], -1],
+            ['!=', ['index-of', 'zona industrial', nomAreaInd], -1],
+            ['!=', ['index-of', 'sector industrial', nomAreaInd], -1],
+            ['!=', ['index-of', 'agrupamiento industrial', nomAreaInd], -1],
+            ['!=', ['index-of', 'complejo industrial', nomAreaInd], -1],
+            ['!=', ['index-of', 'comirsa', nomAreaInd], -1]
+        ];
+
+        // 2. Identifica Plantas Estratégicas Nacionales Nivel 1 (Color Amarillo #ffd700)
+        let esPlantaEstrategicaArea = [
+            'any',
+            ['!=', ['index-of', 'ledesma', nomAreaInd], -1],
+            ['!=', ['index-of', 'zapla', nomAreaInd], -1],
+            ['!=', ['index-of', 'aluminio', nomAreaInd], -1],
+            ['!=', ['index-of', 'aluar', nomAreaInd], -1],
+            ['!=', ['index-of', 'ternium', nomAreaInd], -1],
+            ['!=', ['index-of', 'siderar', nomAreaInd], -1],
+            ['!=', ['index-of', 'acindar', nomAreaInd], -1],
+            ['!=', ['index-of', 'siderca', nomAreaInd], -1],
+            ['!=', ['index-of', 'tenaris', nomAreaInd], -1],
+            ['!=', ['index-of', 'ypf', nomAreaInd], -1],
+            ['!=', ['index-of', 'y.p.f.', nomAreaInd], -1],
+            ['!=', ['index-of', 'refineria', nomAreaInd], -1],
+            ['!=', ['index-of', 'refinería', nomAreaInd], -1],
+            ['!=', ['index-of', 'destileria', nomAreaInd], -1],
+            ['!=', ['index-of', 'destilería', nomAreaInd], -1],
+            ['!=', ['index-of', 'petroquimica', nomAreaInd], -1],
+            ['!=', ['index-of', 'petroquímica', nomAreaInd], -1],
+            ['!=', ['index-of', 'fábrica militar', nomAreaInd], -1],
+            ['!=', ['index-of', 'fabrica militar', nomAreaInd], -1],
+            ['!=', ['index-of', 'río tercero', nomAreaInd], -1],
+            ['!=', ['index-of', 'rio tercero', nomAreaInd], -1],
+            ['!=', ['index-of', 'oldelval', nomAreaInd], -1],
+            ['!=', ['index-of', 'trasandino', nomAreaInd], -1]
         ];
 
         map.addLayer({ 
@@ -958,10 +1020,10 @@
             'source': 'ign-industrias-puntos', 
             'layout': { 'visibility': 'none' }, 
             'paint': { 
-                'circle-radius': ['case', esAreaNivel1, 8.5, 4.5], 
-                'circle-color': ['case', esAreaNivel1, '#00c8ff', '#a9a9a9'], 
-                'circle-stroke-width': ['case', esAreaNivel1, 2, 1.2], 
-                'circle-stroke-color': '#ffffff' 
+                'circle-radius': ['case', esPlantaEstrategicaArea, 9.5, esPoloOParqueIndustrial, 8, 4.5], 
+                'circle-color': ['case', esPlantaEstrategicaArea, '#ffd700', esPoloOParqueIndustrial, '#00c8ff', '#cccccc'], 
+                'circle-stroke-width': ['case', esPlantaEstrategicaArea, 2.2, esPoloOParqueIndustrial, 1.8, 1.2], 
+                'circle-stroke-color': ['case', esPlantaEstrategicaArea, '#ff2a2a', '#ffffff'] 
             }, 
             'maxzoom': 11 
         });
@@ -971,8 +1033,8 @@
             'source': 'ign-industrias', 
             'layout': { 'visibility': 'none' }, 
             'paint': { 
-                'fill-color': ['case', esAreaNivel1, '#00c8ff', '#a9a9a9'], 
-                'fill-opacity': 0.4 
+                'fill-color': ['case', esPlantaEstrategicaArea, '#ffd700', esPoloOParqueIndustrial, '#00c8ff', '#cccccc'], 
+                'fill-opacity': 0.45 
             }, 
             'minzoom': 9 
         });
@@ -982,8 +1044,8 @@
             'source': 'ign-industrias', 
             'layout': { 'visibility': 'none' }, 
             'paint': { 
-                'line-color': ['case', esAreaNivel1, '#00c8ff', '#ffffff'], 
-                'line-width': ['case', esAreaNivel1, 2, 1.5], 
+                'line-color': ['case', esPlantaEstrategicaArea, '#ffd700', esPoloOParqueIndustrial, '#00c8ff', '#ffffff'], 
+                'line-width': ['case', ['any', esPlantaEstrategicaArea, esPoloOParqueIndustrial], 2, 1.5], 
                 'line-dasharray': [2, 2] 
             }, 
             'minzoom': 9 
@@ -991,27 +1053,73 @@
 
         // FÁBRICAS PUNTUALES (Datos/fabrica.geojson)
         map.addSource('ign-fabricas', { type: 'geojson', data: 'Datos/fabrica.geojson' });
-        let nomFab = ['to-string', ['coalesce', ['get', 'fna'], ['get', 'nam'], '']];
-        let isicFab = ['to-number', ['coalesce', ['get', 'isic'], -1]];
+        let nomFab = ['concat', ['to-string', ['coalesce', ['get', 'fna'], '']], ' ', ['to-string', ['coalesce', ['get', 'nam'], '']]];
+        let isicFab = ['to-number', ['get', 'isic'], -1];
 
         let esFabricaNivel1 = [
             'any',
-            ['in', isicFab, ['literal', [19, 24, 29, 30]]],
-            ['!=', ['index-of', 'Fábrica Militar', nomFab], -1],
-            ['!=', ['index-of', 'Río Tercero', nomFab], -1],
-            ['!=', ['index-of', 'Aluar', nomFab], -1],
-            ['!=', ['index-of', 'Ternium', nomFab], -1],
-            ['!=', ['index-of', 'Acindar', nomFab], -1],
-            ['!=', ['index-of', 'Siderca', nomFab], -1],
-            ['!=', ['index-of', 'Zapla', nomFab], -1],
-            ['!=', ['index-of', 'YPF', nomFab], -1],
-            ['!=', ['index-of', 'PETROKEN', nomFab], -1],
-            ['!=', ['index-of', 'Mosconi', nomFab], -1],
-            ['!=', ['index-of', 'Axion', nomFab], -1],
-            ['!=', ['index-of', 'Refinor', nomFab], -1],
-            ['!=', ['index-of', 'Ledesma', nomFab], -1],
-            ['!=', ['index-of', 'General Deheza', nomFab], -1],
-            ['!=', ['index-of', 'Cargill', nomFab], -1]
+            ['in', isicFab, ['literal', [19, 20, 24, 25, 28, 29, 30]]],
+            ['!=', ['index-of', 'fábrica militar', nomFab], -1],
+            ['!=', ['index-of', 'fabrica militar', nomFab], -1],
+            ['!=', ['index-of', 'río tercero', nomFab], -1],
+            ['!=', ['index-of', 'rio tercero', nomFab], -1],
+            ['!=', ['index-of', 'beltrán', nomFab], -1],
+            ['!=', ['index-of', 'beltran', nomFab], -1],
+            ['!=', ['index-of', 'villa maría', nomFab], -1],
+            ['!=', ['index-of', 'villa maria', nomFab], -1],
+            ['!=', ['index-of', 'aluar', nomFab], -1],
+            ['!=', ['index-of', 'aluminio', nomFab], -1],
+            ['!=', ['index-of', 'ternium', nomFab], -1],
+            ['!=', ['index-of', 'siderar', nomFab], -1],
+            ['!=', ['index-of', 'acindar', nomFab], -1],
+            ['!=', ['index-of', 'siderca', nomFab], -1],
+            ['!=', ['index-of', 'tenaris', nomFab], -1],
+            ['!=', ['index-of', 'zapla', nomFab], -1],
+            ['!=', ['index-of', 'siderurg', nomFab], -1],
+            ['!=', ['index-of', 'siderúrg', nomFab], -1],
+            ['!=', ['index-of', 'metalurg', nomFab], -1],
+            ['!=', ['index-of', 'metalúrg', nomFab], -1],
+            ['!=', ['index-of', 'ypf', nomFab], -1],
+            ['!=', ['index-of', 'petroken', nomFab], -1],
+            ['!=', ['index-of', 'petroquim', nomFab], -1],
+            ['!=', ['index-of', 'petroquím', nomFab], -1],
+            ['!=', ['index-of', 'refiner', nomFab], -1],
+            ['!=', ['index-of', 'destiler', nomFab], -1],
+            ['!=', ['index-of', 'mosconi', nomFab], -1],
+            ['!=', ['index-of', 'axion', nomFab], -1],
+            ['!=', ['index-of', 'refinor', nomFab], -1],
+            ['!=', ['index-of', 'shell', nomFab], -1],
+            ['!=', ['index-of', 'pampa energía', nomFab], -1],
+            ['!=', ['index-of', 'pampa energia', nomFab], -1],
+            ['!=', ['index-of', 'ledesma', nomFab], -1],
+            ['!=', ['index-of', 'deheza', nomFab], -1],
+            ['!=', ['index-of', 'cargill', nomFab], -1],
+            ['!=', ['index-of', 'bunge', nomFab], -1],
+            ['!=', ['index-of', 'cofco', nomFab], -1],
+            ['!=', ['index-of', 'arcor', nomFab], -1],
+            ['!=', ['index-of', 'molinos', nomFab], -1],
+            ['!=', ['index-of', 'scania', nomFab], -1],
+            ['!=', ['index-of', 'iveco', nomFab], -1],
+            ['!=', ['index-of', 'renault', nomFab], -1],
+            ['!=', ['index-of', 'toyota', nomFab], -1],
+            ['!=', ['index-of', 'ford', nomFab], -1],
+            ['!=', ['index-of', 'volkswagen', nomFab], -1],
+            ['!=', ['index-of', 'fiat', nomFab], -1],
+            ['!=', ['index-of', 'peugeot', nomFab], -1],
+            ['!=', ['index-of', 'chevrolet', nomFab], -1],
+            ['!=', ['index-of', 'mercedes', nomFab], -1],
+            ['!=', ['index-of', 'loma negra', nomFab], -1],
+            ['!=', ['index-of', 'holcim', nomFab], -1],
+            ['!=', ['index-of', 'papel prensa', nomFab], -1],
+            ['!=', ['index-of', 'celulosa', nomFab], -1],
+            ['!=', ['index-of', 'atucha', nomFab], -1],
+            ['!=', ['index-of', 'invap', nomFab], -1],
+            ['!=', ['index-of', 'fadea', nomFab], -1],
+            ['!=', ['index-of', 'tandanor', nomFab], -1],
+            ['!=', ['index-of', 'astillero', nomFab], -1],
+            ['!=', ['index-of', 'ingenio ', nomFab], -1],
+            ['!=', ['index-of', 'frigorífico', nomFab], -1],
+            ['!=', ['index-of', 'frigorifico', nomFab], -1]
         ];
 
         map.addLayer({
@@ -1993,10 +2101,24 @@
             };
 
             let commodityCrudo = (datos.commodity || datos.mineral || 'NO ESPECIFICADO').toUpperCase();
-            let commodityTraducido = commodityCrudo.split(/[\s,\-\/]+/).map(simbolo => tablaPeriodica[simbolo.trim()] || simbolo).join(' - ');
+            let commodityTraducido = commodityCrudo.split(/[\s,\-\/\|]+/).filter(Boolean).map(simbolo => tablaPeriodica[simbolo.trim()] || simbolo).join(' - ');
 
-            const esNivel1 = (datos.nivel_prioridad || '').includes('NIVEL 1');
+            const textoEvalMin = `${datos.nombre_clave || ''} ${datos.nombre || ''} ${datos.commodity || ''} ${datos.mineral || ''}`.toLowerCase();
+            const tamEvalMin = `${datos.tamaño || ''} ${datos.tamano || ''} ${datos.nivel_prioridad || ''}`.toLowerCase();
+
+            const esNivel1 = tamEvalMin.includes('nivel 1') || 
+                             tamEvalMin.includes('grande') || 
+                             /potasio|tincalayu|sijes|hombre muerto|olaroz|cauchari|rincon|rincón|arizaro|pocitos|salinas grandes|loma negra|litio|alumbrera|agua rica|mara|fénix|veladero|pascua|josemar|pachón|taca taca|lindero|vanguardia|cerro negro|sierra grande|sierra pintada|cerro solo|pirquitas|aguilar/i.test(textoEvalMin);
+
             const colorPrioridad = esNivel1 ? '#ffd700' : colorBase;
+            const textoPrioridadMin = esNivel1 
+                ? (esMetalifero ? 'NIVEL 1 - MEGAYACIMIENTO Y RECURSO CRÍTICO NACIONAL' : 'NIVEL 1 - YACIMIENTO INDUSTRIAL ESTRATÉGICO')
+                : (esMetalifero ? 'NIVEL 2 - DEPÓSITO METALÍFERO REGIONAL' : 'NIVEL 2 - DEPÓSITO Y CANTERA DE MINERAL INDUSTRIAL');
+
+            const evalTacticaMin = esNivel1
+                ? (datos.evaluacion_tactica && !datos.evaluacion_tactica.includes('Nivel 2') ? datos.evaluacion_tactica : 'Yacimiento de escala crítica nacional para la transición energética, siderurgia e insumos químicos estratégicos.')
+                : 'Depósito mineral de soporte productivo regional, abastecimiento de áridos, construcción e industria manufacturera interna.';
+
             const linkSpec = datos.ficha || datos.expediente;
             const linkFicha = (linkSpec && linkSpec !== 'ND' && linkSpec !== '#') ? `<a href="${linkSpec}" target="_blank" style="display: inline-block; margin-top: 12px; background: rgba(255,255,255,0.1); border: 1px solid ${colorPrioridad}; color: ${colorPrioridad}; padding: 6px 12px; text-decoration: none; font-weight: bold; font-size: 12px;">🔗 EXPEDIENTE OFICIAL SEGEMAR</a>` : '';
             
@@ -2004,12 +2126,12 @@
                 <button class="btn-cerrar" onclick="cerrarPanelIntel()">✖</button>
                 <h2 class="intel-titulo" style="color: ${colorPrioridad};">${esMetalifero ? 'Recurso Estratégico Metalífero' : 'Mineral Industrial'}</h2>
                 <div style="margin: 10px 0; padding: 8px; background: rgba(0,0,0,0.4); border-left: 3px solid ${colorPrioridad};">
-                    <span style="color: ${colorPrioridad}; font-weight: bold; font-size: 12px;">${datos.nivel_prioridad || 'RELEVAMIENTO MINERO NACIONAL'}</span>
+                    <span style="color: ${colorPrioridad}; font-weight: bold; font-size: 12px;">${textoPrioridadMin}</span>
                 </div>
                 <div class="intel-campo"><span class="intel-etiqueta">Yacimiento / Proyecto:</span><br><span style="color: #ffffff; font-weight: bold; font-size: 18px;">${datos.nombre_clave || datos.nombre}</span></div>
                 <div class="intel-campo"><span class="intel-etiqueta">Elementos Críticos:</span><br><span style="color: ${colorPrioridad}; font-weight: bold; font-size: 18px;">${commodityTraducido}</span></div>
                 <div class="intel-parrafo" style="margin-top: 12px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 12px; border-left: 2px solid ${colorPrioridad}; font-size: 13px;">
-                    <strong>EVALUACIÓN GEOPOLÍTICA Y MINERALÓGICA:</strong><br>${datos.evaluacion_tactica || 'Depósito mineral indexado por el Servicio Geológico Minero Argentino.'}
+                    <strong>EVALUACIÓN GEOPOLÍTICA Y MINERALÓGICA:</strong><br>${evalTacticaMin}
                 </div>
                 <div class="intel-parrafo" style="margin-top: 10px; font-size: 13px; background: rgba(0,0,0,0.25); padding: 10px;">
                     <strong>PARÁMETROS DE RESERVA:</strong><br>• Magnitud: ${datos.tamaño || 'En Evaluación'}<br>• Recursos: <span style="color:#00ff00;">${datos.recursos_min || 'Relevamiento SEGEMAR'}</span><br>• Modelo Geológico: ${datos.modelo || 'Depósito Mineral'}
@@ -2602,10 +2724,13 @@
 
         const rubroFinal = (datosSQL && datosSQL.tipo) ? datosSQL.tipo : (dicISIC[isicNum] || props.gna || props.objeto || "Área / Planta de Fabricación y Procesamiento");
         const nombreFinal = (datosSQL && datosSQL.nombre) ? datosSQL.nombre : (nombreCrudo || `${rubroFinal.split('/')[0].trim()} (Registro IGN #${props.gid || ''})`);
-        const txt = `${nombreFinal} ${rubroFinal}`.toLowerCase();
+        const txt = `${nombreFinal} ${rubroFinal} ${props.tipo || ''} ${props.gna || ''} ${props.objeto || ''}`.toLowerCase();
 
         let prioridad = (datosSQL && datosSQL.nivel_prioridad) ? datosSQL.nivel_prioridad : "NIVEL 2 - INSTALACIÓN PRODUCTIVA Y DE PROCESAMIENTO REGIONAL";
         let biografia = (datosSQL && datosSQL.evaluacion_tactica) ? datosSQL.evaluacion_tactica : "Instalación integrada al entramado productivo e industrial regional. Aporta capacidad de procesamiento local, logística y abastecimiento al mercado interno.";
+
+        // Detecta todos los Polos, Parques y Áreas Industriales para darles identidad celeste (#00c8ff)
+        const esPoloParqueArea = /parque industrial|parque tecnológico|parque tecnologico|parque petroquímico|parque petroquimico|polo industrial|polo tecnológico|polo tecnologico|polo petroquímico|polo petroquimico|área industrial|area industrial|zona industrial|sector industrial|agrupamiento industrial|complejo industrial|comirsa/i.test(txt);
 
         if (txt.includes("río tercero") || txt.includes("fábrica militar") || txt.includes("beltrán")) {
             prioridad = "NIVEL 1 - INDUSTRIA NACIONAL DE DEFENSA (FABRICACIONES MILITARES)";
@@ -2613,10 +2738,10 @@
         } else if (txt.includes("aluar") || txt.includes("aluminio")) {
             prioridad = "NIVEL 1 - INDUSTRIA BÁSICA ESTRATÉGICA (ALUMINIO PRIMARIO)";
             biografia = "Única productora de aluminio primario de la Argentina. Abastece el 100% del mercado interno para la industria aeroespacial, eléctrica (líneas de alta tensión), automotriz y de defensa.";
-        } else if (txt.includes("ternium") || txt.includes("acindar") || txt.includes("siderca") || txt.includes("zapla") || txt.includes("comirsa")) {
+        } else if (txt.includes("ternium") || txt.includes("acindar") || txt.includes("siderca") || txt.includes("zapla")) {
             prioridad = "NIVEL 1 - COMPLEJO SIDERÚRGICO ESTRATÉGICO NACIONAL";
             biografia = "Columna vertebral de la siderurgia argentina. Produce aceros planos, aceros largos estructurales y tubos sin costura indispensables para perforación hidrocarburífera en Vaca Muerta, gasoductos e infraestructura crítica.";
-        } else if (txt.includes("ypf") || txt.includes("petroken") || txt.includes("mosconi") || txt.includes("destilería") || txt.includes("refinería") || txt.includes("refinor") || txt.includes("axion") || txt.includes("plaza huincul") || txt.includes("bahía blanca") || txt.includes("oldelval") || txt.includes("trasandino") || isicNum === 19) {
+        } else if (txt.includes("ypf") || txt.includes("petroken") || txt.includes("mosconi") || txt.includes("destilería") || txt.includes("refinería") || txt.includes("refinor") || txt.includes("axion") || txt.includes("oldelval") || txt.includes("trasandino") || isicNum === 19) {
             prioridad = "NIVEL 1 - COMPLEJO REFINADOR, PETROQUÍMICO E HIDROCARBURÍFERO";
             biografia = "Infraestructura crítica de procesamiento energético. Transforma el crudo y gas natural en combustibles líquidos (gasoil, naftas, JP-1 aeronáutico), polímeros básicos e insumos petroquímicos estratégicos.";
         } else if (txt.includes("scania") || txt.includes("iveco") || txt.includes("renault") || txt.includes("honda") || txt.includes("alstom") || txt.includes("emepa") || isicNum === 29 || isicNum === 30) {
@@ -2625,16 +2750,16 @@
         } else if (txt.includes("ledesma") || txt.includes("deheza") || txt.includes("cargill") || txt.includes("cofco") || txt.includes("molinos río de la plata") || txt.includes("arcor")) {
             prioridad = "NIVEL 1 - COMPLEJO AGROINDUSTRIAL Y ALIMENTARIO TRONCAL";
             biografia = "Megacomplejo agroalimentario y bioenergético de escala nacional. Lidera la producción de alimentos básicos, papel/celulosa, bioetanol/biodiésel y generación de divisas por exportación.";
-        } else if (txt.includes("río grande") || txt.includes("pilar") || txt.includes("campana") || txt.includes("zárate") || txt.includes("la matanza") || txt.includes("la plata")) {
-            prioridad = "NIVEL 1 - POLO Y PARQUE INDUSTRIAL ESTRATÉGICO NACIONAL";
-            biografia = "Nodo industrial y tecnológico de primera magnitud conectado a los corredores logísticos Nivel 1. Concentra manufactura electrónica, metalmecánica, química y de bienes de capital.";
         } else if (isicNum === 24 || isicNum === 25 || isicNum === 28) {
             prioridad = "NIVEL 1 - INDUSTRIA METALMECÁNICA Y DE BIENES DE CAPITAL";
             biografia = "Planta metalúrgica y de fabricación de maquinaria industrial/agrícola. Provee componentes estructurales, fundición y equipamiento pesado para la matriz productiva nacional.";
+        } else if (esPoloParqueArea) {
+            prioridad = "POLO / PARQUE / ÁREA INDUSTRIAL CONCENTRADA";
+            biografia = "Agrupamiento industrial y logístico conectado a los corredores de transporte e infraestructura energética. Nuclea plantas manufactureras, pymes industriales y centros de distribución.";
         }
 
         const esNivel1 = prioridad.includes('NIVEL 1');
-        const colorInd = esNivel1 ? '#ffd700' : '#00c8ff';
+        const colorInd = esNivel1 ? '#ffd700' : (esPoloParqueArea ? '#00c8ff' : '#cccccc');
 
         panel.innerHTML = `
             <button class="btn-cerrar" onclick="cerrarPanelIntel()">✖</button>
@@ -2846,12 +2971,24 @@
             colorBorde = activo ? "#ff8800" : "#ff4444";
         } else if (['capa-industrias-puntos', 'capa-industrias-relleno', 'capa-fabricas'].includes(capaId)) {
             const isicN = parseInt(p.isic);
-            const nomInd = p.fna || p.nam || p.nombre_clave || (capaId === 'capa-fabricas' ? `Planta Industrial IGN #${p.gid || ''}` : "Polo / Parque Industrial");
-            const esN1 = [19, 24, 29, 30].includes(isicN) || /Aluar|Ternium|Acindar|Siderca|Zapla|YPF|PETROKEN|Mosconi|Axion|Refinor|Río Tercero|Fábrica Militar|Ledesma|Deheza|Plaza Huincul|Bahía Blanca|Comirsa|Campana|Pilar|Río Grande/i.test(nomInd);
+            const nomInd = p.fna || p.nam || p.nombre_clave || p.nombre || (capaId === 'capa-fabricas' ? `Planta Industrial IGN #${p.gid || ''}` : "Polo / Parque Industrial");
+            const txtInd = `${nomInd} ${p.tipo || ''} ${p.gna || ''} ${p.objeto || ''}`.toLowerCase();
+            
+            const esPolo = /parque industrial|parque tecnológico|parque tecnologico|parque petroquímico|parque petroquimico|polo industrial|polo tecnológico|polo tecnologico|polo petroquímico|polo petroquimico|área industrial|area industrial|zona industrial|sector industrial|agrupamiento industrial|complejo industrial|comirsa/i.test(txtInd);
+            const esN1 = [19, 20, 24, 25, 28, 29, 30].includes(isicN) || /aluar|aluminio|ternium|siderar|acindar|siderca|tenaris|zapla|ypf|petroken|mosconi|destiler|refiner|refinor|axion|shell|pampa energ|río tercero|rio tercero|fábrica militar|fabrica militar|beltrán|beltran|villa maría|villa maria|ledesma|deheza|cargill|bunge|cofco|arcor|molinos|scania|iveco|renault|toyota|ford|volkswagen|fiat|peugeot|chevrolet|mercedes|loma negra|holcim|papel prensa|celulosa|atucha|invap|fadea|tandanor|astillero|ingenio |frigorífico|frigorifico|oldelval|trasandino/i.test(txtInd);
+            
             categoria = capaId === 'capa-fabricas' ? "PLANTA FABRIL (IGN AC000)" : "ÁREA PRODUCTIVA E INDUSTRIAL";
             nombre = nomInd;
-            relevancia = esN1 ? "NIVEL 1 | Complejo Industrial Estratégico" : "NIVEL 2 | Establecimiento / Parque Regional";
-            colorBorde = esN1 ? "#ffd700" : "#00c8ff";
+            if (esN1) {
+                relevancia = "NIVEL 1 | Complejo Industrial Estratégico";
+                colorBorde = "#ffd700";
+            } else if (esPolo) {
+                relevancia = "Polo / Parque / Área Industrial";
+                colorBorde = "#00c8ff";
+            } else {
+                relevancia = "NIVEL 2 | Establecimiento Productivo Regional";
+                colorBorde = "#cccccc";
+            }
         } else if (['fibra-hitbox', 'arsat-hitbox'].includes(capaId)) {
             categoria = "TELECOMUNICACIONES CRÍTICAS";
             nombre = p.name || "Cable Submarino Óptico";
@@ -2902,13 +3039,20 @@
             relevancia = clave ? INFO_CAMMESA[clave].substring(0, 95) + "..." : "Despacho eléctrico regional del SADI";
             colorBorde = "#ffd700";
         } else if (['capa-metaliferos', 'capa-industriales'].includes(capaId)) {
-            const comM = p.commodity || p.mineral || '';
-            const tamM = p.tamaño || p.tamano || '';
-            const esN1 = tamM.includes('Grande') || comM.includes('Li') || /Alumbrera|Agua Rica|MARA|Fénix|Hombre Muerto|Olaroz|Cauchari|Veladero|Pascua|Josemar|Pachón|Taca Taca|Lindero|Vanguardia|Cerro Negro|Sierra Grande|Sierra Pintada|Potasio/i.test(nombre);
-            categoria = capaId === 'capa-metaliferos' ? "YACIMIENTO METALÍFERO" : "MINERAL INDUSTRIAL";
+            const esMet = capaId === 'capa-metaliferos';
+            const comM = (p.commodity || p.mineral || '').replace(/\|/g, ' - ');
+            const tamM = `${p.tamaño || ''} ${p.tamano || ''} ${p.nivel_prioridad || ''}`.toLowerCase();
+            const txtM = `${nombre} ${p.nombre_clave || ''} ${p.nombre || ''} ${p.mina || ''} ${comM}`.toLowerCase();
+
+            const esN1 = tamM.includes('grande') || tamM.includes('nivel 1') || (esMet && (p.commodity || '').includes('Li')) ||
+                /potasio|tincalayu|sijes|hombre muerto|olaroz|cauchari|rincon|rincón|arizaro|pocitos|salinas grandes|loma negra|litio|alumbrera|agua rica|mara|fénix|veladero|pascua|josemar|pachón|taca taca|lindero|vanguardia|cerro negro|sierra grande|sierra pintada|cerro solo|pirquitas|aguilar/i.test(txtM);
+
+            categoria = esMet ? "YACIMIENTO METALÍFERO" : "MINERAL INDUSTRIAL";
             nombre = p.nombre_clave || p.nombre || `Proyecto Minero #${p.id_obj || p.depno || ''}`;
-            relevancia = esN1 ? `NIVEL 1 | Megayacimiento Crítico (${comM || 'Estratégico'})` : `NIVEL 2 | Recurso: ${comM || 'SEGEMAR'}`;
-            colorBorde = esN1 ? "#ffd700" : "#ffaa00";
+            relevancia = esN1
+                ? `NIVEL 1 | ${esMet ? 'Megayacimiento Crítico' : 'Yacimiento Estratégico'} (${comM || 'SEGEMAR'})`
+                : `NIVEL 2 | Recurso: ${comM || 'SEGEMAR'}`;
+            colorBorde = esN1 ? "#ffd700" : (esMet ? "#ffaa00" : "#aaaaaa");
         } else if (capaId === 'capa-cuencas-petroleo-relleno') {
             categoria = "CUENCA SEDIMENTARIA HIDROCARBURÍFERA";
             nombre = p.cuenca || p.nombre || p.nam || p.NOMBRE || "Cuenca Petrolera/Gasífera";
