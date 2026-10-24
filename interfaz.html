@@ -557,6 +557,9 @@
         if (document.getElementById('btn-sub-industriales') && document.getElementById('btn-sub-industriales').classList.contains('activo')) {
             contenidoHTML += `<div class="leyenda-grupo"><span class="leyenda-titulo">Minerales Industriales:</span><div><span class="simbolo-punto" style="background:#ffd700; border-color:#ff2a2a;"></span> Yacimiento Estratégico (Nivel 1)</div><div><span class="simbolo-punto" style="background:#aaaaaa; border-color:#ffffff;"></span> Cantera / Depósito (Nivel 2)</div></div>`;
         }
+        if (document.getElementById('btn-sub-cuencas-petroleo') && document.getElementById('btn-sub-cuencas-petroleo').classList.contains('activo')) {
+            contenidoHTML += `<div class="leyenda-grupo"><span class="leyenda-titulo">Hidrocarburos:</span><div><span style="display:inline-block;width:10px;height:10px;background:rgba(163,204,142,0.5);border:1px solid #a3cc8e;margin-right:4px;"></span>Cuenca Sedimentaria</div></div>`;
+        }
         if (document.getElementById('btn-sub-fibra') && document.getElementById('btn-sub-fibra').classList.contains('activo')) {
             contenidoHTML += `<div class="leyenda-grupo"><span class="leyenda-titulo">Telecomunicaciones:</span><div><span class="simbolo-linea" style="background:#00ffff; box-shadow: 0 0 5px #0088ff;"></span> Fibra Óptica Nivel 1</div></div>`;
         }
@@ -598,7 +601,7 @@
         }
     }
 
-    mapboxgl.accessToken = 'TU_TOKEN_AQUI';
+    mapboxgl.accessToken = 'TU_TOKEN_AQUI'
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/jereburgos23/cmu60vrs0003a01s7bot29ztd', 
@@ -772,6 +775,35 @@
                 'circle-stroke-color': ['case', esIndMinNivel1, '#ff2a2a', '#ffffff'] 
             }
         });
+
+        // ==========================================
+        // CUENCAS HIDROCARBURÍFERAS (SEDIMENTARIAS)
+        // ==========================================
+        map.addSource('ign-cuencas-petroleo', { type: 'geojson', data: 'Datos/cuencas_sedimentarias.geojson' });
+        map.addLayer({ 
+            'id': 'capa-cuencas-petroleo-relleno', 
+            'type': 'fill', 
+            'source': 'ign-cuencas-petroleo', 
+            'layout': { 'visibility': 'none' }, 
+            'paint': { 
+                'fill-color': '#a3cc8e', 
+                'fill-opacity': 0.25 
+            }
+        });
+        map.addLayer({ 
+            'id': 'capa-cuencas-petroleo-borde', 
+            'type': 'line', 
+            'source': 'ign-cuencas-petroleo', 
+            'layout': { 'visibility': 'none' }, 
+            'paint': { 
+                'line-color': '#a3cc8e', 
+                'line-width': 1.5, 
+                'line-dasharray': [2, 2], 
+                'line-opacity': 0.8 
+            }
+        });
+
+       
         // ==========================================
         // RED FERROVIARIA ESTRATÉGICA (LOCs)
         // ==========================================
